@@ -16,6 +16,8 @@ We note that at the beginning of each .py file, in the comments section, we have
 
     We note that 'heatmap' and 'regions' will serve as the main tools to develop evaluation metrics for the XAI algorithms. (see morf.py and haas.py below)
 
+- *overlay.py* : (to be completed)
+
 - *morf.py* : Class which implements the MoRF tenchnnique for heatmap evaluation and calculates the aopc_score.
 
 - *haas.py* : (to be completed)
