@@ -1,2 +1,2 @@
 # explainability_with_pytorch
-Material regarding explainability algorithms for image data
+Material on explainability algorithms for images
