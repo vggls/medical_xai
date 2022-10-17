@@ -29,8 +29,8 @@ class deeplift_heatmap():
     self.normalization_mean = [0.5, 0.5, 0.5]     # mean of the image normalization transformation
     self.normalization_std = [0.5, 0.5, 0.5]      # std of the image normalization transformation
     self.model = model                            # the neural network model
-    self.region = 16                              # The region side-length of the region-based heatmap. As per default values 
-                                                  # As per default values heatmap.shape = (128/16, 128/16) = (8, 8)
+    self.region = 16                              # the region side-length of the region-based heatmap. As per default values 
+                                                  # Thus, as per default values heatmap.shape = (128/16, 128/16) = (8, 8)
 
   def transform(self):
 
