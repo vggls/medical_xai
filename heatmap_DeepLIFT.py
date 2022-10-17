@@ -25,11 +25,12 @@ class deeplift_heatmap():
   def __init__(self, img_path, model):
 
     self.img_path = img_path
-    self.img_size = 128
-    self.normalization_mean = [0.5, 0.5, 0.5]
-    self.normalization_std = [0.5, 0.5, 0.5]
-    self.model = model
-    self.region = 16   # thus heatmap size is (128/16, 128/16) = (8, 8)
+    self.img_size = 128                           # the resize size applied to the image
+    self.normalization_mean = [0.5, 0.5, 0.5]     # mean of the image normalization transformation
+    self.normalization_std = [0.5, 0.5, 0.5]      # std of the image normalization transformation
+    self.model = model                            # the neural network model
+    self.region = 16                              # The region side-length of the region-based heatmap. As per default values 
+                                                  # As per default values heatmap.shape = (128/16, 128/16) = (8, 8)
 
   def transform(self):
 
