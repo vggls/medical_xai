@@ -24,7 +24,7 @@ class deeplift_heatmap():
 
   def __init__(self, img_path, model):
 
-    self.img_path = img_path
+    self.img_path = img_path                      # the image path
     self.img_size = 128                           # the resize size applied to the image
     self.normalization_mean = [0.5, 0.5, 0.5]     # mean of the image normalization transformation
     self.normalization_std = [0.5, 0.5, 0.5]      # std of the image normalization transformation
