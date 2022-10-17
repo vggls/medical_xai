@@ -32,19 +32,6 @@ class DeepLIFT_heatmap():
     self.region = 16                              # the region side-length of the region-based heatmap. As per default values 
                                                   # Thus, as per default values heatmap.shape = (128/16, 128/16) = (8, 8)
 
-  def transform(self):
-
-    img_rgb = Image.open(self.img_path).convert('RGB').resize((self.img_size,self.img_size)) #PIL type img
-
-    transformation = transforms.Compose([
-        #transforms.Resize((self.img_size, self.img_size)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=self.normalization_mean, std=self.normalization_std)
-    ])
-
-    img_tensor = transformation(img_rgb).unsqueeze(0)
-
-    return img_tensor
 
   def heatmap(self):
 
@@ -79,3 +66,18 @@ class DeepLIFT_heatmap():
     regions = sorted(regions_dict.items(), key=lambda x: x[1], reverse=True)
 
     return attributions, heatmap, regions
+
+   
+  def transform(self):
+
+    img_rgb = Image.open(self.img_path).convert('RGB').resize((self.img_size,self.img_size)) #PIL type img
+
+    transformation = transforms.Compose([
+        #transforms.Resize((self.img_size, self.img_size)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=self.normalization_mean, std=self.normalization_std)
+    ])
+
+    img_tensor = transformation(img_rgb).unsqueeze(0)
+
+    return img_tensor
