@@ -66,7 +66,7 @@ class deeplift_heatmap():
     attributions = DeepLift(self.model).attribute(tensor,
                                              target=int(np.argmax(self.model(tensor).detach().numpy())))
     attributions = np.transpose(attributions.squeeze(0).cpu().detach().numpy(), (1, 2, 0))
-    attributions = np.mean(attributions, axis = -1)
+    attributions = np.mean(attributions, axis = -1) # np.mean over channels; converts 3-dim to 2-dim
     attributions = np.where(attributions>0, attributions, 0) # ReLU
 
     heatmap = block_reduce(attributions, (self.region,self.region), np.mean)
