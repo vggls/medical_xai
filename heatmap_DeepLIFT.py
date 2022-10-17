@@ -20,7 +20,7 @@ from captum.attr import DeepLift
 
 #############################################################################################################
 
-class deeplift_heatmap():
+class DeepLIFT_heatmap():
 
   def __init__(self, img_path, model):
 
