@@ -18,7 +18,7 @@ We note that at the beginning of each .py file, in the comments section, we have
 
 - *overlay.py* : (to be completed)
 
-- *example.py* : (to be completed) (to use dataloaders)
+- *example(s).ipynb* : (to be completed) (to use dataloaders)
 
 - *morf.py* : Class which implements the MoRF tenchnnique for heatmap evaluation and calculates the aopc_score.
 
