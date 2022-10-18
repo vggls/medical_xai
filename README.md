@@ -10,8 +10,8 @@ We note that at the beginning of each .py file, in the comments section, we have
 
     For each XAI algorithm, we compute three main outputs :
     
-    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim (no channels) and has the same size as the image it comes from. 
-    - A region-level heatmap, named 'heatmap', which comes from an AvgPooling transformation on 'attributions'.
+    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim (no channels) and has the same size as the image it comes from. Pixel attributions can take both negative and positive values.
+    - A region-level heatmap, named 'heatmap', which comes from AvgPooling and ReLU transformation on 'attributions'.
     - A list of the 'heatmap' regions in descending order of importance. The list is named 'regions'.
 
     We note that 'heatmap' and 'regions' will serve as the main tools to develop evaluation metrics for the XAI algorithms. (see morf.py and haas.py below)
