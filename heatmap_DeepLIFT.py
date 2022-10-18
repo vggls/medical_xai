@@ -54,8 +54,8 @@ class DeepLIFT_heatmap():
     attr_dl = np.transpose(attr_dl.squeeze(0).cpu().detach().numpy(), (1, 2, 0))
     attributions = np.mean(attr_dl, axis = -1)                                      # (128, 128)
     
+    attributions = np.where(attributions>0, attributions, 0)                        # ReLU
     heatmap = block_reduce(attributions, (self.region,self.region), np.mean)        # AvgPooling
-    heatmap = np.where(heatmap>0, heatmap, 0)                                       # ReLU
 
     regions_dict = {}
     for i in range(heatmap.shape[0]):
