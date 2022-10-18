@@ -57,10 +57,10 @@ class HiResCAM_heatmap():
                        target_layers=[self.target_layer],
                        use_cuda=False)
 
-        attributions = cam(input_tensor=img_tensor)[0,:,:]                          # (128, 128)
+        attributions = cam(input_tensor=img_tensor)[0,:,:]    # (128, 128)
 
-        attributions = np.where(attributions>0, attributions, 0)                    # ReLU
-        heatmap = block_reduce(attributions, (self.region,self.region), np.mean)    # AvgPooling
+        positive_attributions = np.where(attributions>0, attributions, 0)                    # ReLU
+        heatmap = block_reduce(positive_attributions, (self.region,self.region), np.mean)    # AvgPooling
 
         # Use below code to plt.imshow() the heatmap with the values on the regions as text - Works ok
         #plt.matshow(heatmap)
