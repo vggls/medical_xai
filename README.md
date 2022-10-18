@@ -4,7 +4,7 @@ The purpose of this repo is to gather material which is related to explainabilit
 
 (below files are under construction)
 
-We note that at the beginning of each .py file, in the comments section, we have included a list of the sources (theory, code etc) that the file was build on.
+We note that at the beginning of each .py file, in the comments section, we have included the sources (theory, code etc) used along with remarks and the main ideas where necessary.
 
 - *heatmap_LIME.py, heatmap_HiResCAM.py, heatmap_DeepLIFT.py* <br/>
 
@@ -16,7 +16,7 @@ We note that at the beginning of each .py file, in the comments section, we have
 
     We note that 'heatmap' and 'regions' will serve as the main tools to develop evaluation metrics for the XAI algorithms. (see morf.py and haas.py below)
 
-- *overlay.py* : (to be completed)
+- *overlay.py* : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
 
 - *example(s).ipynb* : (to be completed) (to use dataloaders)
 
