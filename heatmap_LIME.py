@@ -49,10 +49,10 @@ class LIME_heatmap():
         
         exp_class = explanation.top_labels[0]
         dict_heatmap = dict(explanation.local_exp[exp_class])
-        attributions = np.vectorize(dict_heatmap.get)(explanation.segments)        # (128,128)
+        attributions = np.vectorize(dict_heatmap.get)(explanation.segments)          # (128,128)
         
-        heatmap = block_reduce(attributions, (self.region,self.region), np.mean)   # AvgPooling
-        heatmap = np.where(heatmap>0, heatmap, 0)                                  # ReLU
+        attributions = np.where(attributions>0, attributions, 0)                     # ReLU
+        heatmap = block_reduce(attributions, (self.region,self.region), np.mean)     # AvgPooling
         
         regions_dict = {}
         for i in range(heatmap.shape[0]):
