@@ -67,7 +67,6 @@ class LIME_heatmap():
         Description : Classifier prediction probability function, 
                       which takes a numpy array and outputs prediction probabilities
         
-        images: should be a list of 3-dim np.array images of shape (width, height, channels)
         '''        
 
         stacked = np.stack(images, axis=0)
