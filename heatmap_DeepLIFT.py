@@ -52,10 +52,10 @@ class DeepLIFT_heatmap():
     attr_dl = DeepLift(self.model).attribute(tensor,
                                              target=int(np.argmax(self.model(tensor).detach().numpy())))
     attr_dl = np.transpose(attr_dl.squeeze(0).cpu().detach().numpy(), (1, 2, 0))
-    attributions = np.mean(attr_dl, axis = -1)                                      # (128, 128)
+    attributions = np.mean(attr_dl, axis = -1)                                               # (128, 128)
     
-    attributions = np.where(attributions>0, attributions, 0)                        # ReLU
-    heatmap = block_reduce(attributions, (self.region,self.region), np.mean)        # AvgPooling
+    positive_attributions = np.where(attributions>0, attributions, 0)                        # ReLU
+    heatmap = block_reduce(positive_attributions, (self.region,self.region), np.mean)        # AvgPooling
 
     regions_dict = {}
     for i in range(heatmap.shape[0]):
