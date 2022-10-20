@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Sources
     - Paper : https://arxiv.org/pdf/1509.06321.pdf 
