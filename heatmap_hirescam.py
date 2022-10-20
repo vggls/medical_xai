@@ -34,7 +34,7 @@ from pytorch_grad_cam import HiResCAM
 
 ##############################################################################################
 
-class HiResCAM_heatmap():
+class heatmap_HiResCAM():
     
     def __init__(self, img_path, model, target_layer):
         
