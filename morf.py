@@ -11,7 +11,7 @@ import torch
 
 class MoRF():
 
-  # at single tensor (image) level
+  # At single tensor (image) level. It considers the top predicted class before the perturbations.
 
   def __init__(self, tensor, heatmap_regions, model, noise):
 
