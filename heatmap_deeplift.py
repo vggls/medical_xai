@@ -31,7 +31,7 @@ def ReLU_inplace_to_False(model):
         
     return model
 
-class DeepLIFT_heatmap():
+class heatmap_DeepLIFT():
     
     def __init__(self, img_path, model):
         
