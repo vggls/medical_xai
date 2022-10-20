@@ -23,7 +23,7 @@ from lime import lime_image
 
 #########################################################################################################
 
-class LIME_heatmap():
+class heatmap_LIME():
     
     def __init__(self, img_path, model):
         
