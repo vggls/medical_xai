@@ -6,7 +6,7 @@ The purpose of this repo is to gather material which is related to explainabilit
 
 We note that at the beginning of each .py file, in the comments section, we have included the sources (theory, code etc) used along with remarks and the main ideas where necessary.
 
-- *heatmap_LIME.py, heatmap_HiResCAM.py, heatmap_DeepLIFT.py* <br/>
+- *heatmap_lime.py, heatmap_hirescam.py, heatmap_deeplift.py* <br/>
 
     For each XAI algorithm, we compute three main outputs :
     
