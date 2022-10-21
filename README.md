@@ -4,7 +4,7 @@ The purpose of this repo is to gather material which is related to explainabilit
 
 (below files are under construction)
 
-We note that at the beginning of each .py file, in the comments section, we have included the sources (theory, code etc) used along with remarks and the main ideas where necessary.
+We note that at the beginning of each .py file, in the comments section, there are the sources (theory, code etc) used along with remarks and the main ideas, where necessary.
 
 - *heatmap_lime.py, heatmap_hirescam.py, heatmap_deeplift.py* <br/>
 
