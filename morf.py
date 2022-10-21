@@ -57,7 +57,8 @@ class MoRF():
         perturbations.append(perturbed_prob)
 
       if plot_morf_curve==True:
-          # A good heatmap results in a large area over the morf perturbation curve. This is where the 'AOPC' name comes from.
+          # A good heatmap results in a large area over the morf (perturbation) curve. This is where the 'AOPC' name comes from.
+          # Note that this area is controlled by the sum of differences f(x_0) - f(x_step). This is why we compute them in the 'aopc' method.
           plt.plot(range(0,len(perturbations)), perturbations)
           plt.title('MoRF Perturbation Curve')
           plt.xlabel('Perturbation steps')
