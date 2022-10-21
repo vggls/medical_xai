@@ -67,7 +67,7 @@ class MoRF():
 
       return perturbations
 
-  def aopc(self, plot_differences=False, plot_accumulative_differences=False):
+  def aopc(self, plot_differences=False, plot_cumulative_differences=False):
 
       probabilities = self.perturbations()
 
@@ -81,11 +81,11 @@ class MoRF():
           plt.ylabel('Probabilities difference')
           plt.show()
 
-      if plot_accumulative_differences==True:
+      if plot_cumulative_differences==True:
           # Note that the area below this curve is the AOPC score.
           sum_of_differences = np.cumsum(differences)   #cumulative sum of differences
           plt.plot(range(0,len(probabilities)), sum_of_differences)
-          plt.title('MoRF curve: Cumulative differences')
+          plt.title('Cumulative differences')
           plt.xlabel('Perturbation steps')
           plt.ylabel('Sum of differences')
           plt.show()
