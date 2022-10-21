@@ -26,7 +26,7 @@ class MoRF():
       isinstance(self.noise, torch.Tensor)
       assert( noise.shape == (3, self.perturbation_size, self.perturbation_size) ) # assert that noise shape is the same shape as the heatmap regions
 
-  def perturbations(self, plot_probabilities=False):
+  def perturbations(self, plot_morf_curve=False):
 
       # list to store all predicted probabilities of the top predicted class
       perturbations = []
@@ -56,15 +56,17 @@ class MoRF():
         # append the value to perturbations
         perturbations.append(perturbed_prob)
 
-      if plot_probabilities==True:
+      if plot_morf_curve==True:
+          # A good heatmap results in a large area over the morf perturbation curve. This is where the 'AOPC' name comes from.
           plt.plot(range(0,len(perturbations)), perturbations)
+          plt.title('MoRF Perturbation Curve')
           plt.xlabel('Perturbation steps')
           plt.ylabel('Predicted probability')
           plt.show()
 
       return perturbations
 
-  def aopc(self, plot_differences=False, plot_morf_curve=False):
+  def aopc(self, plot_differences=False, plot_accumulative_differences=False):
 
       probabilities = self.perturbations()
 
@@ -78,9 +80,9 @@ class MoRF():
           plt.ylabel('Probabilities difference')
           plt.show()
 
-      if plot_morf_curve==True:
-          # note that (sum of differences calculated in) the aopc score is the area below this curve !!!
-          sum_of_differences = np.cumsum(differences) #cumulative sum of differences
+      if plot_accumulative_differences==True:
+          # Note that the area below this curve is the AOPC score.
+          sum_of_differences = np.cumsum(differences)   #cumulative sum of differences
           plt.plot(range(0,len(probabilities)), sum_of_differences)
           plt.title('MoRF curve: Cumulative differences')
           plt.xlabel('Perturbation steps')
