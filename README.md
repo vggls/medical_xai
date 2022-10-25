@@ -10,9 +10,8 @@ We note that at the beginning of each .py file, in the comments section, there a
 
     For each XAI algorithm, we compute three main outputs :
     
-    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim (no channels) and has the same size as the image it comes from.  For DeepLIFT and LIME the attribution values are in [-1, 1] and as as result 'positive_attributions' (via ReLU) are computed as well.
-    On the other hand, HiResCAM attributions are already in range [0, 1].
-    - A region-level heatmap, named 'heatmap', which emerges by applying AvgPooling transformations on 'positive_attributions'. The values range in [0, 1].
+    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim np.ndarray (no channels) and has the same size as the image it comes from.  For DeepLIFT and LIME the attribution values are in [-1, 1] while for HiResCAM in [0, 1].
+    - A region-level heatmap, named 'heatmap', which emerges by applying AvgPooling transformations on 'attributions'.
     - A list of the 'heatmap' regions in descending order of importance. The list is named 'regions'.
 
     We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
