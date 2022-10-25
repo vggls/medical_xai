@@ -17,7 +17,7 @@ We note that at the beginning of each .py file, in the comments section, there a
 
     We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
 
-- *overlay.py* : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
+- **overlay.py** : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
 
 - **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders.
 
