@@ -47,9 +47,7 @@ from lime import lime_image
 #-----------------------------------------------------------------------------------------------
 
 def heatmap_function(tensor, model, xai_algorithm, target_layer=None):
-    
-    # no_of_regions = no. of regions per heatmap side (i.e. if heatmap is divided into 81 regions then no_of_regions=9)
-    
+        
     assert Tensor.dim(tensor) == 3
     
     assert xai_algorithm in ['hirescam', 'deeplift', 'lime']
