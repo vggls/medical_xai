@@ -6,20 +6,19 @@ The purpose of this repo is to gather material which is related to explainabilit
 
 We note that at the beginning of each .py file, in the comments section, there are the sources (theory, code etc) used along with remarks and the main ideas, where necessary.
 
-- *heatmap_lime.py, heatmap_hirescam.py, heatmap_deeplift.py* <br/>
+- **heatmaps.py** <br/>
 
     For each XAI algorithm, we compute three main outputs :
     
-    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim (no channels) and has the same size as the image it comes from. Pixel attributions can take both negative and positive values as per xai algorithms construction.
-    - A region-level heatmap, named 'heatmap', which emerges by applying ReLU and AvgPooling transformations on 'attributions'. The values range in [0, 1].
+    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim (no channels) and has the same size as the image it comes from.  For DeepLIFT and LIME the attribution values are in [-1, 1] and as as result 'positive_attributions' (via ReLU) are computed as well.
+    On the other hand, HiResCAM attributions are already in range [0, 1].
+    - A region-level heatmap, named 'heatmap', which emerges by applying AvgPooling transformations on 'positive_attributions'. The values range in [0, 1].
     - A list of the 'heatmap' regions in descending order of importance. The list is named 'regions'.
 
-    We note that 'heatmap' and 'regions' will serve as the main tools to develop evaluation metrics for the XAI algorithms. (see morf.py and haas.py below)
+    We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
 
 - *overlay.py* : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
 
-- *example(s).ipynb* : (to be completed) (to use dataloaders)
-
-- *morf.py* : Class which implements the MoRF tenchnnique for heatmap evaluation and calculates the aopc_score.
+- **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the aopc_score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders.
 
 - *haas.py* : (to be completed)
