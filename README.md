@@ -2,8 +2,6 @@
 
 The purpose of this repo is to gather material which is related to explainability algorithms for image data.
 
-(below files are under construction)
-
 We note that at the beginning of each .py file, in the comments section, there are the sources (theory, code etc) used along with remarks and the main ideas, where necessary.
 
 - **heatmaps.py** <br/>
@@ -20,4 +18,4 @@ We note that at the beginning of each .py file, in the comments section, there a
 
 - **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders.
 
-- *haas.py* : (to be completed)
+- **haas.py** : Calculation of the HAAS score for evaluation of XAI algorithms
