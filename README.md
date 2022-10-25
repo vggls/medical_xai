@@ -19,6 +19,6 @@ We note that at the beginning of each .py file, in the comments section, there a
 
 - *overlay.py* : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
 
-- **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the aopc_score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders.
+- **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders.
 
 - *haas.py* : (to be completed)
