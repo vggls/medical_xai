@@ -13,7 +13,7 @@ from heatmaps import heatmap_function
 class MoRF():
 
   # Implements MoRF at single tensor (image) level
-  # Rmk: tensor side should be resized to a multiplier of 8 (ex 64, 128, 256) to align with heatmaps.py region_size calculations
+  # Rmk: tensor side should be resized to a multiplier of 8 (ex 64, 128, 256) to align with heatmaps.py region_size calculations. To be generalized in the future.
 
   def __init__(self, tensor, heatmap_regions, model, noise):
 
