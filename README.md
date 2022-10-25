@@ -2,7 +2,7 @@
 
 The purpose of this repo is to gather material which is related to explainability algorithms for image data.
 
-We note that at the beginning of each .py file, in the comments section, there are the sources (theory, code etc) used along with remarks and the main ideas, where necessary.
+We note that at the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
 
 - **heatmaps.py** <br/>
 
