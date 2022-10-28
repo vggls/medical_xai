@@ -8,8 +8,9 @@ Sources/Useful info
             - It is the layer wrt which we compute the (high prob) class derivatives
             - Usually this will be the last convolutional layer in the model.
               In this case, as remarked in Github by the authors, some common choices can be:
-              Resnet18 and 50: model.layer4
-              VGG, densenet161: model.features[-1]
+              Resnet18 and 50: [model.layer4]
+              vgg16, vgg19, densenet161, densenet201, efficientnets
+                    mobilenet_v2, mobilenet_v3_small, mobilenet_v3_large: [model.features[-1]]
               mnasnet1_0: model.layers[-1]
           
         c) Remark on the 'targets' parameter of the HiResCAM methdod:
@@ -46,15 +47,15 @@ from lime import lime_image
 
 #-----------------------------------------------------------------------------------------------
 
-def heatmap_function(tensor, model, xai_algorithm, target_layer=None):
+def heatmap_function(tensor, model, xai_algorithm, target_layers=None):
         
     assert Tensor.dim(tensor) == 3
     
     assert xai_algorithm in ['hirescam', 'deeplift', 'lime']
     
     if xai_algorithm == 'hirescam':
-        assert target_layer is not None
-        attributions = hirescam(tensor, model, target_layer)
+        assert target_layers is not None
+        attributions = hirescam(tensor, model, target_layers)
     elif xai_algorithm == 'deeplift':
         attributions = deeplift(tensor, model)
     elif xai_algorithm == 'lime':
@@ -74,9 +75,9 @@ def heatmap_function(tensor, model, xai_algorithm, target_layer=None):
 
 #---HiResCAM------------------------------------------------------------------------------------
 
-def hirescam(tensor, model, target_layer):
+def hirescam(tensor, model, target_layers):
 
-    cam = HiResCAM(model=model, target_layers=target_layer, use_cuda=False)
+    cam = HiResCAM(model=model, target_layers=target_layers, use_cuda=False)
 
     attributions = cam(input_tensor=tensor.unsqueeze(0))[0,:,:]  # numpy.ndarray, 2-dim, values in [0,1]
     
