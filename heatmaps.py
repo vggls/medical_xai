@@ -28,7 +28,7 @@ Sources/Useful info
     
 """
 # pip install grad-cam
-# pip install captun
+# pip install captum
 # pip install lime
 
 import numpy as np
