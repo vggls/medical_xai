@@ -12,8 +12,11 @@ Sources/Useful info
               vgg16, vgg19, densenet161, densenet201, efficientnets
                     mobilenet_v2, mobilenet_v3_small, mobilenet_v3_large: [model.features[-1]]
               mnasnet1_0: model.layers[-1]
+              
+        c) VERY IMPORTANT: In case the target layer was frozen for the model training, in order to pass to the HiResCAM it should be unfrozen
+                           Otherwise, TypeError occurs.
           
-        c) Remark on the 'targets' parameter of the HiResCAM methdod:
+        d) Remark on the 'targets' parameter of the HiResCAM methdod:
              As per lines 105-110 from this code https://github.com/jacobgil/pytorch-grad-cam/blob/master/cam.py
              as long as we are ok with getting only the heatmap of the highest prob category 
              we are ok with the below implementation and we do not have to set any value to this parameter (default is None)
