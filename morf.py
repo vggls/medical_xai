@@ -20,12 +20,13 @@ class MoRF():
   def __init__(self, tensor, heatmap_regions, model, noise):
 
       self.tensor = tensor                    # tensor (1,c,h,w)
+      assert(self.tensor.shape[2]==self.tensor.shape[3])
       self.heatmap_regions = heatmap_regions  # the image heatmap regions in order of importance (resulting from a XAI algorithm)
       self.model = model                      # a neural network model
       self.noise = noise                      # tensor ex. uniform_noise = (torch.min(tensor) - torch.max(tensor)) * torch.rand(shape) + torch.max(tensor)
                                               #        ex. normal_noise = torch.normal(mean=0, std=1, size) + needs to fix values below -1 and above 1 (if any)
         
-      self.perturbation_size = int(tensor.shape[2]/np.sqrt(len(self.heatmap_regions)))       #  the size of the image region that will be perturbed
+      self.perturbation_size = int(self.tensor.shape[3]/np.sqrt(len(self.heatmap_regions)))       #  the size of the image region that will be perturbed
 
       isinstance(self.tensor, torch.Tensor)
       isinstance(self.noise, torch.Tensor)
