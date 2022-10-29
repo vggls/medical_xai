@@ -21,7 +21,7 @@ class MoRF():
       self.tensor = tensor                    # tensor (1,c,h,w)
       assert(self.tensor.shape[2]==self.tensor.shape[3])
       self.heatmap_regions = heatmap_regions  # the image heatmap regions in order of importance (resulting from a XAI algorithm)
-      self.model = model                      # a neural network model
+      self.model = model                      # a neural network model WITH Softmax in the end of the classifier
       self.noise = noise                      # tensor ex. uniform_noise = (torch.min(tensor) - torch.max(tensor)) * torch.rand(shape) + torch.max(tensor)
                                               #        ex. normal_noise = torch.normal(mean=0, std=1, size) + needs to fix values below -1 and above 1 (if any)
         
