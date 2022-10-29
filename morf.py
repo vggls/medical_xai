@@ -25,7 +25,7 @@ class MoRF():
       self.noise = noise                      # tensor ex. uniform_noise = (torch.min(tensor) - torch.max(tensor)) * torch.rand(shape) + torch.max(tensor)
                                               #        ex. normal_noise = torch.normal(mean=0, std=1, size) + needs to fix values below -1 and above 1 (if any)
         
-      self.perturbation_size = int(tensor.shape[3]/np.sqrt(len(self.heatmap_regions)))       #  the size of the image region that will be perturbed
+      self.perturbation_size = int(tensor.shape[2]/np.sqrt(len(self.heatmap_regions)))       #  the size of the image region that will be perturbed
 
       isinstance(self.tensor, torch.Tensor)
       isinstance(self.noise, torch.Tensor)
