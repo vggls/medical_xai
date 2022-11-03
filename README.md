@@ -21,4 +21,4 @@ This repo is organized as follows:
 
 - **haas.py** : Calculation of the HAAS score for evaluation of XAI algorithms
 
-Note that at the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
+Remark: At the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
