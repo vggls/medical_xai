@@ -1,6 +1,9 @@
-The purpose of this repo is to gather code that is related to explainability algorithms and evaludation metrics.
+This repo is organized as follows:
 
-We note that at the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
+- **training** <br/>
+    
+    - get_loader.py : code that loads data with Dataloaders and applies oversampling (optional)
+    - training.py : Training loop implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase and apply a callback Early Stopping tenchnique. Note that the code is written for medical tasks purposes and as a result the Early Stopping method monitors improvements on the validation loss and the average validation recall scores of the disease related classes
 
 - **heatmaps.py** <br/>
 
@@ -17,3 +20,5 @@ We note that at the beginning of each .py file, in the comments section, we have
 - **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders.
 
 - **haas.py** : Calculation of the HAAS score for evaluation of XAI algorithms
+
+Note that at the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
