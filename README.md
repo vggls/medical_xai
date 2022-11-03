@@ -1,6 +1,4 @@
-# explainability_with_pytorch
-
-The purpose of this repo is to gather material which is related to explainability algorithms for image data.
+The purpose of this repo is to gather code that is related to explainability algorithms and evaludation metrics.
 
 We note that at the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
 
