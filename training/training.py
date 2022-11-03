@@ -1,5 +1,3 @@
-# training.py file organized in class structure
-
 import torch
 from copy import deepcopy
 
@@ -70,7 +68,7 @@ class Train():
         self.best_model            = deepcopy(self.model)
         self.unchanged_epochs      = 0
         
-        print('Starting training..')
+        print('Starting training...')
         
         for e in range(0, self.epochs):
 
@@ -104,7 +102,8 @@ class Train():
             
             if self.unchanged_epochs == self.patience:
                 break
-            
+        
+        print('Training complete!')
         return self.training_history, self.validation_history
     
     #------------------------------------------------------------------------------------------------------
