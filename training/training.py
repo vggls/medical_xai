@@ -78,7 +78,7 @@ class Train():
             #------Training-----------------------------------
             self.model.train() # set model to training phase
             
-            print('-->Training phase')
+            print('->Training phase')
             
             #train_epoch
             self.train_epoch()
@@ -89,7 +89,7 @@ class Train():
             #-------Validation---------------------------------
             self.model.eval() # set model to validation phase
             
-            print('-->Validation phase')
+            print('->Validation phase')
             
             #validate_epoch
             self.validate_epoch()
@@ -134,7 +134,7 @@ class Train():
             
         # mean epoch train loss
         train_loss /= (train_step + 1)
-        print(f'Loss={train_loss:.4f}')
+        print(f'  Loss={train_loss:.4f}')
         self.training_history['loss'].append(train_loss)
      
     #------------------------------------------------------------------------------------------------------   
@@ -163,7 +163,7 @@ class Train():
             
         # mean epoch validation loss
         val_loss /= (val_step + 1)
-        print(f'Loss={val_loss:.4f}')
+        print(f'  Loss={val_loss:.4f}')
         self.validation_history['loss'].append(val_loss)
 
     #------------------------------------------------------------------------------------------------------
@@ -212,7 +212,7 @@ class Train():
         f1_score = round(sum(f1_scores)/len(f1_scores), 2)
         dictionary['avg_f1'].append(f1_score)
     
-        print(f'Accuracy={accuracy} - Recall per class={recalls}')
+        print(f'  Accuracy={accuracy} - Recall per class={recalls}')
         
     #------------------------------------------------------------------------------------------------------
     def early_stopping_check(self):
@@ -236,7 +236,7 @@ class Train():
             current_epoch = len(self.validation_history['loss'])
             torch.save(self.best_model, f'model_epoch{current_epoch}.pt') 
             
-            print('-->New model saved!')
+            print('->New model saved!')
             
         else:
             self.unchanged_epochs += 1
