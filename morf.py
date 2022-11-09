@@ -49,7 +49,7 @@ class MoRF():
       prob = round(float(predict[0,index]),3)         # probability of the top predicted class
       perturbations.append(prob)
 
-      image = self.tensor.detach().clone()                     # do this in order to have access to the initial tensor after the perturbations
+      image = self.tensor.detach().clone()            # do this in order to have access to the initial tensor after the perturbations
 
       for step in range(0, len(self.heatmap_regions)):
 
