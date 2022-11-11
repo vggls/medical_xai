@@ -17,9 +17,11 @@ Sources/Useful info
                            Otherwise, TypeError occurs.
           
         d) Remark on the 'targets' parameter of the HiResCAM methdod:
-             As per lines 105-110 from this code https://github.com/jacobgil/pytorch-grad-cam/blob/master/cam.py
-             as long as we are ok with getting only the heatmap of the highest prob category 
-             we are ok with the below implementation and we do not have to set any value to this parameter (default is None)
+             As per lines 105-110 of https://github.com/jacobgil/pytorch-grad-cam/blob/master/cam.py
+             below code returns only the heatmap of the highest prob category (targets=None by default).
+             Note that in order to get the heatmaps from the rest classes as well one of the following Target classes should be used
+             https://github.com/jacobgil/pytorch-grad-cam/blob/master/pytorch_grad_cam/utils/model_targets.py
+             
 
     => DeepLIFT 
         a) Paper: https://arxiv.org/pdf/1704.02685.pdf (Includes links to video tutorial, ICML presentation and GitHub code)
