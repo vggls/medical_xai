@@ -4,10 +4,9 @@ from copy import deepcopy
 '''
 Remarks 
 
-    1. The training loop focuses on training a medical task model. 
-        This means that we are mainly interested in the recall scores of the unhealthy classes.
-        For this purpose, the callback function, see 'early_stopping_check' method, is an Early Stopping technique 
-        focusing on the improvement of the validation loss and avg recall of the unhealthy classes.
+    1. The training loop focuses on training a medical task model. This means that the recall scores of the unhealthy classes is a priority.
+        For this purpose, the 'early_stopping_check' method implements an Early Stopping technique 
+        which focuses on the improvement of the validation loss and avg recall of the unhealthy classes.
      
     2. In the 'early_stopping_check' method, in order to further control the loss and avg recall condition one may 
         include "self.l1=1" and "self.l2=1" parameters in the __init__ function and re-write the early stopping condition as :
