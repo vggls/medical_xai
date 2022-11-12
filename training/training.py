@@ -8,7 +8,7 @@ Remarks
         For this purpose, the 'early_stopping_check' method implements an Early Stopping technique 
         which focuses on the improvement of the validation loss and avg recall of the unhealthy classes.
      
-    2. (to be done) In the 'early_stopping_check' method, in order to further control the loss and avg recall condition one may 
+    2. (to do) In the 'early_stopping_check' method, in order to further control the loss and avg recall condition one may 
         include "self.l1=1" and "self.l2=1" parameters in the __init__ function and re-write the early stopping condition as :
         "if (epoch_val_loss < self.threshold_val_loss * self.l1) and (self.threshold_avg_recall * self.l2 < epoch_val_avg_recall)".
      
