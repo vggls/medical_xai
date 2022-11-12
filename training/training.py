@@ -4,21 +4,25 @@ from copy import deepcopy
 '''
 Remarks 
 
-    1. The training loop ('training' method) focuses on training a medical task model. 
+    1. The training loop focuses on training a medical task model. 
         This means that we are mainly interested in the recall scores of the unhealthy classes.
-        For this purpose, the callback function is an Early Stopping technique focusing on 
-        the improvement of the validation loss and avg recall of the unhealthy classes (min_delta = 0) 
-        
-    2. Per training epoch we see/print the progress of the loss, accuracy and recall metrics.
+        For this purpose, the callback function, see 'early_stopping_check' method, is an Early Stopping technique 
+        focusing on the improvement of the validation loss and avg recall of the unhealthy classes.
+     
+    2. In the 'early_stopping_check' method, in order to further control the loss and avg recall condition one may 
+        include "self.l1=1" and "self.l2=1" parameters in the __init__ function and re-write the early stopping condition as :
+        "if (epoch_val_loss < self.threshold_val_loss * self.l1) and (self.threshold_avg_recall * self.l2 < epoch_val_avg_recall)".
+     
+    3. Per training epoch we see/print the progress of the loss, accuracy and recall metrics.
     
-    3. The resulting best model is saved in a .pt file
+    4. The resulting best model is saved in a .pt file
     
-    4. Labels should be in integers (not strings) starting from 0, ex. 0,1,2,3 for a 4-class problem
+    5. Labels should be in integers (not strings) starting from 0, ex. 0,1,2,3 for a 4-class problem
         If data is loaded via Dataloaders the above format is loaded automatically by the ImageFolder method.
         In order to verify the the class name-label assignment created by the Dataloader you may type
         "print(train_dataset.class_to_idx)"
         
-    5. The 'training' method returns two dictionaries that contain the loss and metrics history 
+    6. The 'training' method returns two dictionaries that contain the loss and metrics history 
         for the training and validation phases respectively.
         Each dictionary has the following self-explanatory keys: 
             - 'loss', 'accuracy', 'avg_recall', 'avg_precision', 'avg_f1'; 
@@ -31,7 +35,8 @@ Remarks
 class Train():
     
     def __init__(self, model, loss_fct, optimizer, 
-                 train_loader, validation_loader, no_of_classes, label_of_normal_class):
+                 train_loader, validation_loader, 
+                 no_of_classes, label_of_normal_class):
         
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         print('Device:', self.device)
