@@ -1,18 +1,20 @@
 """
-How to load train/val/test data via Dataloaders: 
+=> How to load train/val/test data via Dataloaders: 
     - Organize manually data into training_folder, validation_folder and test_folder
       such that each folder contains the data into separate subfolders with the class name.
-    - Pass the folder path into the 'root' argument of the ImageFolder method and assign the result to a 'dataset' variable.
+    - Pass the folder path into the 'root' argument of the -ImageFolder- method and assign the result to a 'dataset' variable.
       Note that by doing this the labels are automatically assigned to integer numbers.
-    - Finally, load data by inserting the 'dataset' to a Dataloader instance. 
+      As far as the 'transforms' argument is concerned note that the transforms of the validation and test data 
+      should be the same and without any augmentation methods.
+    - Finally, load data by inserting the 'dataset' to a -Dataloader- instance. 
       At this step, you may also pass a 'sampler' as explained below.
-
-Sources for the WeightedRandomSampler' sampler
+      
+=> Sources for the WeightedRandomSampler' sampler:
     - https://www.youtube.com/watch?v=4JFVhJyTZ44&ab_channel=AladdinPersson   (code)
     - https://towardsdatascience.com/demystifying-pytorchs-weightedrandomsampler-by-example-a68aceccb452
     - https://stackoverflow.com/questions/67799246/weighted-random-sampler-oversample-or-undersample
     
-How to use the 'oversample' argument of the get_loader function
+=> How to use the 'oversample' argument of the get_loader function:
     - Apply to train data after train/val/test split
     - For training data use train_transforms and set "shuffle=False and oversample=True" or "shuffle=True and oversample=False"
     - For validation data use test_transforms and "shuffle=True and oversample=False"
