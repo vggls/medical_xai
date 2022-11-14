@@ -13,7 +13,7 @@ Sources/Useful info
                     mobilenet_v2, mobilenet_v3_small, mobilenet_v3_large: [model.features[-1]]
               mnasnet1_0: model.layers[-1]
               
-        c) VERY IMPORTANT: In case the target layer was frozen for the model training, in order to pass to the HiResCAM it should be unfrozen
+        c) VERY IMPORTANT: In case the target layer was frozen for the training phase, we should unfreeze it in order to pass the model as HiResCAM argument.
                            Otherwise, TypeError occurs.
           
         d) Remark on the 'targets' parameter of the HiResCAM methdod:
