@@ -31,6 +31,17 @@ from torch import Tensor
 
 def superimposed(tensor, heatmap, alpha):    
     
+    '''
+    Arguments
+    tensor: a 3-dim torch tensor with values in ...
+    heatmap: a 2-dim np.array with values in ...
+    alpha: number in [0,1]
+    
+    Outputs
+    img_array: the tensor converted to a numpy array
+    superimposed_img: the overlay image, as per (*)
+    '''
+    
     assert Tensor.dim(tensor) == 3
     
     img_array = tensor.permute(2,1,0).detach().numpy()    
