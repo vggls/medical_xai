@@ -1,7 +1,7 @@
 """
 => The 'dataset' argument will be created either via 
     - the ImageFolder method or
-    - https://pytorch.org/tutorials/beginner/basics/data_tutorial.html
+    - a custom created dataset as per https://pytorch.org/tutorials/beginner/basics/data_tutorial.html
    It depends on the data format
       
 => Sources for the WeightedRandomSampler' sampler:
