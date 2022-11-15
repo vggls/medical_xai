@@ -7,7 +7,12 @@ Remarks
     1. The training loop ('training' method) focuses on training a medical task model. 
         This means that we are mainly interested in the recall scores of the unhealthy classes.
         For this purpose, the callback function is an Early Stopping technique focusing on 
-        the improvement of the validation loss and avg recall of the unhealthy classes (min_delta = 0) 
+        the improvement of the validation loss and avg recall of the unhealthy classes
+        
+        (to do) In order to further control the improvement amount of the val loss and avg val recall 
+        one may introduce the attributes self.l1 and self.l2 in the __init__ fct and consider the weighted terms 
+        self.threshold_val_loss * self.l1 and self.threshold_avg_recall * self.l2 in the callback condition.
+        (If self.l1 = self.l2 = 1 then it is equivalent to the current code)
         
     2. Per training epoch we see/print the progress of the loss, accuracy and recall metrics.
     
