@@ -1,9 +1,14 @@
 This repo is organized as follows:
 
-- **training** folder <br/>
+- **models** folder <br/>
+  
+   - **densenet.py** : custom class which instantiates DenseNet 121 or 201 pretrained model
+
+- **training & testing** folder <br/>
     
     - **sampler.py** : Creates a WeighterRandomSampler instance 
     - **training.py** : Training loop implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase and apply a callback Early Stopping tenchnique. Note that the code is written for medical tasks purposes and as a result the Early Stopping method monitors improvements on the validation loss and the average validation recall scores of the disease related classes
+    - (testing custom methods to be included as well)
 
 - **heatmaps.py** <br/>
 
