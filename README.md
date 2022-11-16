@@ -8,7 +8,7 @@ This repo is organized as follows:
     
     - **sampler.py** : Creates a WeighterRandomSampler instance 
     - **training.py** : Training loop implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase and apply a callback Early Stopping tenchnique. Note that the code is written for medical tasks purposes and as a result the Early Stopping method monitors improvements on the validation loss and the average validation recall scores of the disease related classes
-    - (testing custom methods to be included as well)
+    - **testing_report.py** : Implements classification report and ROC and PR curves for given model and dataloader object
 
 - **heatmaps.py** <br/>
 
