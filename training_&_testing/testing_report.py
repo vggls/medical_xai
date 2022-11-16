@@ -45,7 +45,8 @@ class Test_Report():
         # One hot encode the labels in order to plot them
         self.y_onehot = pd.get_dummies(self.y_true_labels)
         self.y_onehot.columns = self.classes
-        # ----------------------------------------------------------------------------------------
+
+        # ----------------end of attributes----------------------------------------------------------
     
     def classification_report(self):
             
