@@ -15,17 +15,18 @@ class Test_Report():
     
     def __init__(self, dataloader, model, classes):
         
+        # ------------------- set device attribute-----------------------------------------------
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         print('Device:', self.device)
         
-        # main attributes
+        # ------------------- main attributes ---------------------------------------------------
         self.dataloader = dataloader
         self.model = model
         self.classes = classes   # list of strings
 
         self.model.to(self.device)
 
-        # class attributes to be used for calculations in the class methods
+        # ------ attributes to be used for calculations in the class methods ---------------------
         self.y_true_labels = []; self.y_pred_labels = []
         scores = [];
         
@@ -44,7 +45,7 @@ class Test_Report():
         # One hot encode the labels in order to plot them
         self.y_onehot = pd.get_dummies(self.y_true_labels)
         self.y_onehot.columns = self.classes
-    
+        # ----------------------------------------------------------------------------------------
     
     def classification_report(self):
             
