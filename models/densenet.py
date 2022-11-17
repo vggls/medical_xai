@@ -79,7 +79,6 @@ class DenseNet():
         
         
     def trainable_params(self):
-        # below is equivalent to summary from torchsummary
         print('No. of trainable params', sum(p.numel() for p in self.model.parameters() if p.requires_grad))
 
     def unfreeze(self):
