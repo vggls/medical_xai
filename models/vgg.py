@@ -35,7 +35,7 @@ class VGG():
         
         if self.type_ == '16':
             self.model = models.vgg16(pretrained=True)
-        elif self.type == '19':
+        elif self.type_ == '19':
             self.model = models.vgg19(pretrained=True)
         
         # CLASSIFIER
