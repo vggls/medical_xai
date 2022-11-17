@@ -2,7 +2,7 @@ This repo is organized as follows:
 
 - **models** folder <br/>
   
-   - **models.py** :  custom classe which instantiates pretrained models with adjustable frozen layers and custom classifiers
+   - **models.py** :  custom class which instantiates pretrained models with adjustable frozen layers and custom classifiers
 
 - **training & testing** folder <br/>
     
