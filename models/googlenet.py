@@ -43,7 +43,7 @@ class GoogLeNet():
     def __init__(self, no_of_classes, trainable_layers=None, custom_classifier=None):
         
         self.no_of_classes = no_of_classes
-        self.layers = trainable_layers
+        self.trainable_layers = trainable_layers
         self.custom_classifier = custom_classifier
         
         self.model = models.googlenet(pretrained=True)
@@ -68,10 +68,10 @@ class GoogLeNet():
                     self.model.inception4a, self.model.inception4b, self.model.inception4c, 
                     self.model.inception4d, self.model.inception4e, self.model.maxpool4,
                     self.model.inception5a, self.model.inception5b]
-        if self.layers==None:
+        if self.trainable_layers==None:
             self.freeze = all_layers
         else: 
-            self.freeze = [all_layers[j] for j in range(len(all_layers)) if j not in self.layers]
+            self.freeze = [all_layers[j] for j in range(len(all_layers)) if j not in self.trainable_layers]
             
         for child in self.freeze:
             for param in child.parameters():
