@@ -9,7 +9,7 @@ The motivation for the definition of this attribute is that, in some cases,
 we have observed that training the transition blocks and not the dense ones 
 yields better results than training some of the last consequtive layers.
 
-DenseNet architectures have the following 12(=len(model.features)) features layers:
+DenseNet architectures have the following 12 features layers:
     LAYER               INDEX
 features.conv0       :    0
 features.norm0       :    1
@@ -45,7 +45,7 @@ class DenseNet():
         
         self.type_ = type_
         self.no_of_classes = no_of_classes
-        self.layers = trainable_feature_layers
+        self.trainable_feature_layers = trainable_feature_layers
         self.custom_classifier = custom_classifier
         
         if self.type_ == '121':
@@ -68,10 +68,10 @@ class DenseNet():
             self.model.classifier = self.custom_classifier
         
         # LAYERS TO FREEZE DURING TRAINING
-        if self.layers==None:
+        if self.trainable_feature_layers==None:
             self.freeze = self.model.features
         else: 
-            self.freeze = [self.model.features[j] for j in range(12) if j not in self.layers]
+            self.freeze = [self.model.features[j] for j in range(12) if j not in self.trainable_feature_layers]
             
         for child in self.freeze:
             for param in child.parameters():
