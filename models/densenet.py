@@ -10,19 +10,19 @@ we have observed that training the transition blocks and not the dense ones
 yields better results than training some of the last consequtive layers.
 
 DenseNet architectures have the following 12(=len(model.features)) features layers:
-    LAYER                     INDEX
-model.features.conv0       :    0
-model.features.norm0       :    1
-model.features.relu0       :    2
-model.features.pool0       :    3
-model.features.denseblock1 :    4
-model.features.transition1 :    5
-model.features.denseblock2 :    6
-model.features.transition2 :    7
-model.features.denseblock3 :    8
-model.features.transition3 :    9
-model.features.denseblock4 :    10
-model.features.norm5       :    11
+    LAYER               INDEX
+features.conv0       :    0
+features.norm0       :    1
+features.relu0       :    2
+features.pool0       :    3
+features.denseblock1 :    4
+features.transition1 :    5
+features.denseblock2 :    6
+features.transition2 :    7
+features.denseblock3 :    8
+features.transition3 :    9
+features.denseblock4 :    10
+features.norm5       :    11
 '''
 
 from collections import OrderedDict
