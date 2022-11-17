@@ -62,7 +62,6 @@ class DenseNet():
             ]))
             self.model.classifier = default_classifier
         else:
-            assert self.custom_classifier[0].in_features == num_filters
             assert self.custom_classifier[-2].out_features == self.no_of_classes
             assert type(custom_classifier[-1]) == nn.modules.activation.Softmax
             self.model.classifier = self.custom_classifier
