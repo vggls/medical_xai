@@ -44,7 +44,8 @@ class MobileNet_V3_Large():
         if self.trainable_feature_layers==None:
             self.freeze = self.model.features
         else: 
-            len_ = len(self.model.features) #17
+            len_ = len(self.model.features)
+            assert all(x in range(len_) for x in self.trainable_feature_layers)
             self.freeze = [self.model.features[j] for j in range(len_) if j not in self.trainable_feature_layers]
             
         for child in self.freeze:
