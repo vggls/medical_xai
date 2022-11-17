@@ -3,6 +3,7 @@ This repo is organized as follows:
 - **models** folder <br/>
   
    - **densenet.py** : custom class which instantiates DenseNet 121 or 201 pretrained model
+   - **googlenet.py** : custom class which instantiates a GoogLeNet pretrained model
 
 - **training & testing** folder <br/>
     
