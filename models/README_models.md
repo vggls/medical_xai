@@ -1,6 +1,8 @@
 In this file there is a detailed description of the 'Models' class attributes as written in the accompanying models.py.
 
-    --> type_: one of 'densenet121', 'densenet201', 'vgg16', 'vgg19', 'googlenet'
+    --> type_: densenet.py --> one of '121', '201', 
+               vgg.py --> one of '16', '19',
+               efficientnet.py --> one of 'b3', 'b4', 'b5', 'b6', 'b7'
 
     --> no_of_classes: integer
 
@@ -33,8 +35,12 @@ In this file there is a detailed description of the 'Models' class attributes as
                                   ----------------------------------------------------------------
                                   
                                   Vgg16: 31 feature layers indexed from 0 to 30
-                                  
+                           
                                   Vgg19: 37 feature layers indexed from 0 to 36
+                                  
+                                  ----------------------------------------------------------------
+                                  
+                                  EfficientNets: 9 features layers indexed from 0 to 8
                                   
                                   ----------------------------------------------------------------
     
