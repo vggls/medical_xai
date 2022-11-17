@@ -69,7 +69,8 @@ class GoogLeNet():
                     self.model.inception5a, self.model.inception5b]
         if self.trainable_layers==None:
             self.freeze = all_layers
-        else: 
+        else:
+            assert all(x in range(len(all_layers)) for x in self.trainable_feature_layers)
             self.freeze = [all_layers[j] for j in range(len(all_layers)) if j not in self.trainable_layers]
             
         for child in self.freeze:
