@@ -1,4 +1,4 @@
-In this file there is a detailed description of the 'Models' class attributes as written in the accompanying models.py.
+In this file there is a detailed description of the class attributes included in the accompanying model py files.
 
     --> type_: densenet.py --> one of '121', '201', 
                vgg.py --> one of '16', '19',
