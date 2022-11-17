@@ -2,7 +2,7 @@ This repo is organized as follows:
 
 - **models** folder <br/>
   
-   - **densenet.py**, **googlenet.py**, **mobilenet_v3_large.py**, **vgg.py** :  custom classes which instantiate pretrained models with adjustable frozen layers and custom classifiers
+   - **models.py** :  custom classe which instantiates pretrained models with adjustable frozen layers and custom classifiers
 
 - **training & testing** folder <br/>
     
