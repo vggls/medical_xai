@@ -1,9 +1,6 @@
 """
-=> The 'dataset' argument will be created either via 
-    - the ImageFolder method or
-    - https://pytorch.org/tutorials/beginner/basics/data_tutorial.html
-   It depends on the data format
-      
+=> OVERSAMPLING
+
 => Sources for the WeightedRandomSampler' sampler:
     - https://www.youtube.com/watch?v=4JFVhJyTZ44&ab_channel=AladdinPersson   (code)
     - https://towardsdatascience.com/demystifying-pytorchs-weightedrandomsampler-by-example-a68aceccb452
