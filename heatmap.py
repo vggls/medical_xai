@@ -33,12 +33,12 @@ def heatmap(pixel_attributions, region_size):
             
     assert pixel_attributions.shape[0]%region_size == 0
     
-    heat_map = block_reduce(pixel_attributions, (region_size, region_size), np.mean)  # AvgPooling
+    heatmap = block_reduce(pixel_attributions, (region_size, region_size), np.mean)  # AvgPooling
     
     regions_dict = {}
-    for i in range(heat_map.shape[0]):
-        for j in range(0, heat_map.shape[0]):
-            regions_dict[i,j] = heat_map[i,j]
+    for i in range(heatmap.shape[0]):
+        for j in range(0, heatmap.shape[0]):
+            regions_dict[i,j] = heatmap[i,j]
     regions = sorted(regions_dict.items(), key=lambda x: x[1], reverse=True)
     
-    return heat_map, regions
+    return heatmap, regions
