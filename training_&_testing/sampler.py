@@ -1,12 +1,12 @@
 """
-=> OVERSAMPLING
-
 => Sources for the WeightedRandomSampler' sampler:
     - https://www.youtube.com/watch?v=4JFVhJyTZ44&ab_channel=AladdinPersson   (code)
     - https://towardsdatascience.com/demystifying-pytorchs-weightedrandomsampler-by-example-a68aceccb452
     - https://stackoverflow.com/questions/67799246/weighted-random-sampler-oversample-or-undersample
 
-=> To be passed as a DataLoader argument in case oversampling of training data is needed
+=> The WeightedRandomSampler is used to oversample the minority class(es);
+   by increasing the frequency that images from these classes are seen by the model during training.
+   It should be passed as the 'sampler' argument of the DataLoader.
 
 """
 
