@@ -11,12 +11,10 @@ This repo is organized as follows:
     - **train_model.py** : Includes the 'fit' method which loads data via DataLoaders and trains a model according to training_loop.py
     - **testing_report.py** : Implements classification report and ROC and PR curves for given model and dataloader object
 
-- **heatmaps.py** <br/>
-
-    For each XAI algorithm, we compute three main outputs :
+- **heatmap.py** : Includes function that accepts pixel-level attributions obtained by XAI algorithm (ex. HiResCAM) and calculates 
     
-    - A pixel-level heatmap, named 'attributions', which comes from a direct application of the XAI alg to the image pixels. It is 2-dim np.ndarray (no channels) and has the same size as the image it comes from.  For DeepLIFT and LIME the attribution values are in [-1, 1] while for HiResCAM in [0, 1].
-    - A region-level heatmap, named 'heatmap', which emerges by applying AvgPooling transformation on 'attributions'.
+    - A region-level heatmap, named 'heatmap', which emerges by applying AvgPooling transformation on the pixel attributions.
+    
     - A list of the 'heatmap' regions in descending order of importance. The list is named 'regions'.
 
     We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
