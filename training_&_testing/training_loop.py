@@ -40,8 +40,8 @@ class Train():
         
         # attributes set by the user
         self.model = model                                 # nn model                
-        self.loss_fct = loss_fct                           # loss function
-        self.optimizer = optimizer                         # loss optimizer
+        self.loss_fct = loss_fct                           # Loss function. A torch.nn instance
+        self.optimizer = optimizer                         # Weights optimizer. A torch.optim instance
         self.train_loader = train_loader                   
         self.validation_loader = validation_loader
         self.no_of_classes = no_of_classes
@@ -50,7 +50,7 @@ class Train():
         # default value attributes
         self.epochs = 100                                  # max number of epochs to train the model
         self.patience = 20                                 # epochs to wait until regularizer condition is improved
-        self.scheduler = None                              # to gradually adjust learning rate value
+        self.scheduler = None                              # To gradually adjust learning rate value. A torch.optim instance
         
         self.model.to(self.device)
         
