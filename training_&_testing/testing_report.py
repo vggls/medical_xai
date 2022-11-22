@@ -56,7 +56,9 @@ class Test_Report():
 
     def balanced_accuracy(self):
         
-        print(f'Balanced Accuracy Score: {balanced_accuracy_score(self.y_true_labels, self.y_pred_labels)}')
+        result = balanced_accuracy_score(self.y_true_labels, self.y_pred_labels)
+        
+        print(f'Balanced Accuracy Score: {round(result, 2)}')
         
     def roc_curve(self):
         
