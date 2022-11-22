@@ -6,7 +6,7 @@ Sources : https://scikit-learn.org/stable/modules/generated/sklearn.metrics.clas
 import numpy as np
 import plotly.graph_objects as go
 import pandas as pd
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, balanced_accuracy_score
 from sklearn.metrics import roc_curve, roc_auc_score
 from sklearn.metrics import precision_recall_curve, average_precision_score
 import torch
@@ -54,6 +54,9 @@ class Test_Report():
                                     y_pred = self.y_pred_labels,
                                     target_names = self.classes))
 
+    def balanced_accuracy(self):
+        
+        print(f'Balanced Accuracy Score: {balanced_accuracy_score(self.y_true_labels, self.y_pred_labels)}')
         
     def roc_curve(self):
         
