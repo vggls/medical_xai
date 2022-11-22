@@ -6,8 +6,12 @@ This repo is organized as follows:
 
 - **training & testing** folder <br/>
     
-    - **sampler.py** : Creates a WeighterRandomSampler instance 
-    - **training_loop.py** : Training loop implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase and apply an Early Stopping regularization tenchnique. Note that the code is written for medical tasks purposes and as a result the Early Stopping method monitors improvements on the validation loss and the average validation recall scores of the disease related classes
+    - **imbalanced.py** : Creates class weights and a WeighterRandomSampler instance to address class imbalance in the dataset
+    - **training_loop.py** : Training loop class implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase.
+          In addition the following regularization techniques are included : <br/>
+          a) Early Stopping regularization tenchnique. Note that since the code is written for medical tasks purposes method monitors improvements on the validation loss and the average validation recall scores of the disease related classes. <br/>
+          b) Scheduled control of the optimizer learning rate is available. Application is optional via the 'scheduler' attribute.
+          
     - **train_model.py** : Includes the 'fit' method which loads data via DataLoaders and trains a model according to training_loop.py
     - **testing_report.py** : Implements classification report and ROC and PR curves for given model and dataloader object
 
