@@ -13,7 +13,7 @@ This repo is organized as follows:
           b) Scheduled control of the optimizer learning rate. Application is optional via the 'scheduler' attribute.
           
     - **train_model.py** : Includes the 'fit' method which loads data via DataLoaders and trains a model according to training_loop.py
-    - **testing_report.py** : Implements classification report and ROC and PR curves for given model and dataloader object
+    - **testing_report.py** : Calculates classification report, balanced accuracy score and ROC and PR curves and scores for given model and dataloader object
 
 - **heatmap.py** : Includes function that accepts pixel-level attributions obtained by XAI algorithm (ex. HiResCAM) and calculates 
     
