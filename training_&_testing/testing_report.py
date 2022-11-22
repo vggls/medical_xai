@@ -1,6 +1,6 @@
 '''
-Sources : https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html
-          https://plotly.com/python/roc-and-pr-curves/
+Sources : - sklearn documentation
+          - https://plotly.com/python/roc-and-pr-curves/
 '''
 
 import numpy as np
