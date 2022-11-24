@@ -38,7 +38,7 @@ class GoogLeNet():
         if self.trainable_layers==None:
             self.freeze = all_layers
         else: 
-            assert all(x in range(len(all_layers)) for x in self.trainable_feature_layers)
+            assert all(x in range(len(all_layers)) for x in self.trainable_layers)
             self.freeze = [all_layers[j] for j in range(len(all_layers)) if j not in self.trainable_layers]
             
         for child in self.freeze:
