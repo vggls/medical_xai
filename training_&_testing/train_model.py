@@ -26,7 +26,7 @@ def fit(train_dataset, validation_dataset, batch_size,
             - scheduler: Use to change learning rate per epochs. A torch.optim instance
             
      --> 'no_of_classes': integer
-         'labels_of_normal_classes': Should be either 'None' or a list of integers starting from 0 
+         'labels_of_normal_classes': Should be either 'None' or a list of integers
                                     ex. 0,1,2,3 for a 4-class problem
                                     The ImageFolder method and or CustomDataset class assigns integers automatically to the classes
                                     In order to verify the the class name-label assignment created by the Dataloader you may type
