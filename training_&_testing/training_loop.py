@@ -8,7 +8,7 @@ Remarks
     1. The training loop ('training' method) focuses on training a medical task model. 
         This means that we are mainly interested in the recall scores of the unhealthy classes.
         For this purpose, the callback function is an Early Stopping technique focusing on 
-        the improvement of the validation loss and avg recall of the unhealthy classes (min_delta = 0) 
+        the improvement of the validation loss and avg recall (see also remark 7) of the unhealthy classes (min_delta = 0) 
         
     2. Per training epoch we see/print the progress of the loss, accuracy and recall metrics.
     
@@ -30,6 +30,13 @@ Remarks
         For instance, consider a dataset with classes labelled by 0,1,2 where 0 and 2 are cancerous cells and 1 is a healthy cell.
         This attribute allows to stop training only when the cancerous classes are well classified witout being affected by the normal
         class results. Thus, in this scenario one may set labels_of_normal_classes = [1]
+    
+    7. On the condition of the Early Stopping callback:
+       --> In the code we consider the 'average recall' of the 'un-normal' classes, where each class'es recall contributes the same to the final average. 
+       --> Alternatively, one may consider a 'weighted average recall', where each classe'es recall is weighted by the class instances as well. In the end the
+        resulting sum over all classes is divided the total number of instances.
+        ex. for two classes, the weighted avg recall would be: weighted_avg_recall=(r1∗|c1|)+(r2∗|c2|)|c1|+|c2| ,
+        where  r1  and  r2  are the recalls for class 1 and class 2, and  |c1|  and  |c2|  are the number of instances in class 1 and class 2
     
 '''
 
