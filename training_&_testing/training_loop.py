@@ -45,7 +45,7 @@ class Train():
         self.train_loader = train_loader                   
         self.validation_loader = validation_loader
         self.no_of_classes = no_of_classes
-        self.label_of_normal_class = label_of_normal_class # see Remark 4 above
+        self.label_of_normal_class = label_of_normal_class # should be a list of integers
         
         # default value attributes
         self.epochs = 100                                  # max number of epochs to train the model
@@ -233,7 +233,7 @@ class Train():
         
         #current epoch validation loss and avg recall of all disease classes 
         epoch_val_loss = self.validation_history['loss'][-1]
-        epoch_val_avg_recall = sum([j[-1] for (i, j) in enumerate(self.validation_history['recall_per_class']) if i!=self.label_of_normal_class]) \
+        epoch_val_avg_recall = sum([j[-1] for (i, j) in enumerate(self.validation_history['recall_per_class']) if i not in self.label_of_normal_class]) \
                                 / (self.no_of_classes - 1)
         
         # αν το loss πεφτει και αν τα unhealthy class recalls αυξηθηκαν on avg όρισε νέο best_model και ανανεώσε τα thresholds
