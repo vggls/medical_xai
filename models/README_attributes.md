@@ -1,7 +1,8 @@
 In this file there is a detailed description of the class attributes included in the accompanying model py files.
 
-    --> type_: densenet.py --> one of '121', '201', 
-               vgg.py --> one of '16', '19',
+    --> type_: densenet.py --> one of '121', '201'
+               resnet.py --> one of '18', '50'
+               vgg.py --> one of '16', '19'
                efficientnet.py --> one of 'b3', 'b4', 'b5', 'b6', 'b7'
 
     --> no_of_classes: integer
