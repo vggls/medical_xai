@@ -10,8 +10,7 @@ In this file there is a detailed description of the class attributes included in
     --> trainable_feature_layers: This attribute is either 'None' (default) OR a list of indices where each index 
                                   corresponds to the layer index among the model's features. The list allows the user 
                                   to choose any layers of preference for training regardless of their position in the architecture.
-                                  We note that the classifier / fully connected part of the network is trainable as per class construction,
-                                  either it is the standard or a custom classifier (see next attribute)
+                                  As per .py files, we note that the classifier / fully connected part of the network is always trainable
                                   
                                   Per pretrained architecture the trainable layers are indexed as follows :
                                   
