@@ -55,34 +55,3 @@ def fit(train_dataset, validation_dataset, batch_size,
     training_dict, validation_dict = instance.training()
 
     return training_dict, validation_dict
-
-
-'''
-EXAMPLE CODE
-
-ex1: how to call the 'fit' function
-
-# model instance, as per efficientnet.py custom written file in 'models' folder
-efficientnet_b4 = EfficientNet(type_ = 'b4',  no_of_classes = 4) 
-
-training_dict, validation_dict = fit(train_dataset,
-                                    validation_dataset,
-                                    batch_size = 128,
-                                    train_sampler=None,
-                                    model = efficientnet_b4,
-                                    loss_fct = torch.nn.CrossEntropyLoss(),
-                                    optimizer_fct = 'Adam',
-                                    learning_rate = 0.001,
-                                    no_of_classes = 4,
-                                    labels_of_normal_classes = [2])
---------------------------------------------------------------------------
-
-ex2: how to save the dictionaries in pickle files:
-
-import pickle    
-path = ...
-with open(path + 'training_dict.pickle', 'wb') as f: 
-  pickle.dump(training_dict, f)
-with open(path + 'validation_dict.pickle', 'wb') as f: 
-  pickle.dump(validation_dict, f)
-'''
