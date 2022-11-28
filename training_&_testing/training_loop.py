@@ -7,7 +7,7 @@ class Train():
     def __init__(self, model, loss_fct, optimizer, scheduler, 
                  train_loader, validation_loader, 
                  epochs, patience,
-                 no_of_classes, labels_of_normal_classes=None):
+                 no_of_classes, labels_of_normal_classes):
         
         # set device attribute
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
