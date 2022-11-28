@@ -25,7 +25,10 @@ def fit(train_dataset, validation_dataset, batch_size,
             - loss_fct: The loss function. A torch.nn instance
             - optimizer: The algorithm to update weights. A torch.optim instance
             - scheduler: Use to change learning rate per epochs. A torch.optim instance
-            
+     
+     --> 'epochs': max number of training epochs
+         'patience': max number of epochs until Early Stopping condition is satisfied
+     
      --> 'no_of_classes': integer
          'labels_of_normal_classes': Should be either 'None' or a list of integers 
                                       ex. 0,1,2,3 for a 4-class problem
