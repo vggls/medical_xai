@@ -37,7 +37,7 @@ def fit(train_dataset, validation_dataset, batch_size,
             
     OUTPUTS:
     
-    --> training_dict and validation_dict: you may find a detailed description in the training_loop.py file 
+    --> training_dict and validation_dict: dictionary to monitor loss, class and overall metrics
         
     '''
     
