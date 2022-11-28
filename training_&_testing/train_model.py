@@ -2,11 +2,10 @@ from torch.utils.data import DataLoader
 from training_loop import Train
     
 def fit(train_dataset, validation_dataset, batch_size,
-        model, loss_fct, optimizer,
+        model, loss_fct, optimizer, scheduler,
         epochs, patience,
         no_of_classes, labels_of_normal_classes,
-        train_sampler=None,
-        scheduler=None):
+        train_sampler=None):
     
     '''
     ARGUMENTS: 
@@ -51,11 +50,10 @@ def fit(train_dataset, validation_dataset, batch_size,
     val_loader = DataLoader(dataset=validation_dataset, batch_size=batch_size, shuffle=True, num_workers=2)
     
     # training_loop.py instance
-    instance = Train(model.model, loss_fct, optimizer, 
+    instance = Train(model.model, loss_fct, optimizer, scheduler,
                   train_loader, val_loader, 
                   epochs, patience,
                   no_of_classes, labels_of_normal_classes)
-    instance.scheduler = scheduler #default scheduler attribute Train class value is 'None' 
 
     training_dict, validation_dict = instance.training()
 
