@@ -2,6 +2,7 @@ In this file there is a detailed description of the class attributes included in
 
     --> type_: densenet.py --> one of '121', '169', '201'
                resnet.py --> one of '18', '50'
+               resnext.py --> one of '50_32x4d', '101_32x8d'
                vgg.py --> one of '16', '19'
                efficientnet.py --> one of 'b3', 'b4', 'b5', 'b6', 'b7'
 
@@ -14,7 +15,7 @@ In this file there is a detailed description of the class attributes included in
                                   
                                   Per pretrained architecture the trainable layers are indexed as follows :
                                   
-                                  ----------DenseNets-----------     |    ------GoogLeNet--------    |    ------ResNets--------  
+                                  ----------DenseNets-----------     |    ------GoogLeNet--------    |    ------ResNe(X)ts--------  
                                       LAYER               INDEX      |      LAYER         INDEX      |      LAYER        INDEX
                                   features.conv0       :    0        |      conv1       :   0        |      conv1     :    0
                                   features.norm0       :    1        |      maxpool1    :   1        |      bn1       :    1
