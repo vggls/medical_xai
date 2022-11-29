@@ -17,6 +17,8 @@ class DenseNet():
         
         if self.type_ == '121':
             self.model = models.densenet121(pretrained=True)
+        elif self.type_ == '169':
+            self.model = models.densenet169(pretrained=True)
         elif self.type_ == '201':
             self.model = models.densenet201(pretrained=True)
         
