@@ -214,7 +214,7 @@ class Train():
                                     / (self.no_of_classes)
         
         # αν το loss πεφτει και αν τα unhealthy class recalls αυξηθηκαν on avg όρισε νέο best_model και ανανεώσε τα thresholds
-        if (epoch_val_loss < self.threshold_val_loss) and (self.threshold_avg_recall < epoch_val_avg_recall):           
+        if (epoch_val_loss <= self.threshold_val_loss) and (self.threshold_avg_recall <= epoch_val_avg_recall):           
             
             current_epoch = len(self.validation_history['loss'])
             self.early_stopping_checkpoints.append(current_epoch)  
