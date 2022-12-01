@@ -30,7 +30,9 @@ Remarks on training_loop.py
   
      - In the code we consider the 'average recall' of the 'un-normal' classes, where each class'es recall contributes the same to the final average. 
      
-     - Alternatively, one may consider a 'weighted average recall', where each classe'es recall is weighted by the class instances as well. In the end the
+     - Alternatively, one may consider a 'weighted recall', where each classe'es recall is weighted by the class instances as well. In the end the
       resulting sum over all classes is divided the total number of instances.
       ex. for two classes, the weighted avg recall would be: weighted_avg_recall=(r1∗|c1|)+(r2∗|c2|)|c1|+|c2| ,
-      where  r1  and  r2  are the recalls for class 1 and class 2, and  |c1|  and  |c2|  are the number of instances in class 1 and class 2
+      where  r1  and  r2  are the recalls for class 1 and class 2, and  |c1|  and  |c2|  are the number of instances in class 1 and class 2.
+      Note that above calculation is equal to the 'accuracy' metric score.
+      
