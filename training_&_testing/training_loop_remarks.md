@@ -29,7 +29,8 @@ Remarks on training_loop.py
   7. On the condition of the Early Stopping callback: 
    
      Along with validation loss, the purpose is to monitor class recalls and save models with improved recall scores. 
-     Below are listed two metrics that one may try to measure multi-class recall scores (via a single number). Alternatively, custom metrics could be defined. 
+     Below are listed two metrics that one may try to measure multi-class recall scores (via a single number). Alternatively, custom metrics could be defined.
+     The choice of the final metric is determined by the testing report metrics of interest. 
   
      - In the code we consider the '(macro) average recall' of the 'un-normal' classes. In this case each class'es recall contributes the same weight to the calculated average. 
      
