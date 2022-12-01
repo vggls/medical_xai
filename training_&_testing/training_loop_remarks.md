@@ -27,8 +27,10 @@ Remarks on training_loop.py
       class results. Thus, in this scenario one may set labels_of_normal_classes = [1]
 
   7. On the condition of the Early Stopping callback:
-     --> In the code we consider the 'average recall' of the 'un-normal' classes, where each class'es recall contributes the same to the final average. 
-     --> Alternatively, one may consider a 'weighted average recall', where each classe'es recall is weighted by the class instances as well. In the end the
+  
+     - In the code we consider the 'average recall' of the 'un-normal' classes, where each class'es recall contributes the same to the final average. 
+     
+     - Alternatively, one may consider a 'weighted average recall', where each classe'es recall is weighted by the class instances as well. In the end the
       resulting sum over all classes is divided the total number of instances.
       ex. for two classes, the weighted avg recall would be: weighted_avg_recall=(r1∗|c1|)+(r2∗|c2|)|c1|+|c2| ,
       where  r1  and  r2  are the recalls for class 1 and class 2, and  |c1|  and  |c2|  are the number of instances in class 1 and class 2
