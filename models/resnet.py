@@ -18,8 +18,14 @@ class ResNet():
         
         if self.type_ == '18':
             self.model = models.resnet18(pretrained=True)
+        elif self.type_ == '34':
+            self.model = models.resnet34(pretrained=True)
         elif self.type_ == '50':
             self.model = models.resnet50(pretrained=True)
+        elif self.type_ == '101':
+            self.model = models.resnet101(pretrained=True)
+        elif self.type_ == '152':
+            self.model = models.resnet152(pretrained=True)
         
         # CLASSIFIER
         num_filters = self.model.fc.in_features
