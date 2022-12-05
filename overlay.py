@@ -33,8 +33,8 @@ def superimposed(tensor, heatmap, alpha):
     
     '''
     Arguments
-    tensor: a 3-dim torch tensor with values in ...
-    heatmap: a 2-dim np.array with values in ...
+    tensor: a 3-dim torch tensor
+    heatmap: a 2-dim np.array
     alpha: number in [0,1]
     
     Outputs
@@ -44,7 +44,7 @@ def superimposed(tensor, heatmap, alpha):
     
     assert Tensor.dim(tensor) == 3
     
-    img_array = tensor.permute(2,1,0).detach().numpy()    
+    img_array = tensor.permute(1,2,0).detach().numpy()    
 
     # Rescale heatmap to a range 0-255
     heatmap = np.uint8(255 * heatmap)
