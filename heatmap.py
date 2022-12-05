@@ -14,7 +14,7 @@ ATTRIBUTIONS
             - It is the layer wrt which we compute the class derivatives
             - Usually this will be the last convolutional layer in the model.
               In this case, as remarked in Github by the authors, some common choices can be:
-              Resnet18 and 50: [model.layer4]
+              Resnet18 and 50: [model.layer4[-1]]
               vgg16, vgg19, densenet161, densenet201, efficientnets, mobilenet_v2, mobilenet_v3_small, mobilenet_v3_large: [model.features[-1]]
               mnasnet1_0: model.layers[-1]     
         e) VERY IMPORTANT: In case the target layer was frozen for the training phase, we should unfreeze it in order to pass the model as HiResCAM argument.
