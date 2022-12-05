@@ -8,7 +8,7 @@ ATTRIBUTIONS
         c) example code:
              # pip install grad-cam
              from pytorch_grad_cam import HiResCAM
-             cam = HiResCAM(model=model, target_layers=target_layers, use_cuda=False)
+             cam = HiResCAM(model=model, target_layers=target_layers, use_cuda=True)
              pixel_attributions = cam(input_tensor=tensor.unsqueeze(0))[0,:,:]  # numpy.ndarray, 2-dim, values in [0,1]
         d) Remarks on the target_layer attribute:
             - It is the layer wrt which we compute the class derivatives
