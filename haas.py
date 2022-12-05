@@ -4,7 +4,7 @@ Source
 """
 
 import numpy as np
-from sklearn.metrics import accuracy_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, recall_score, f1_score, balanced_accuracy_score
 import torch
 
 #-----------------------------------------------------------------------------------------
@@ -13,7 +13,7 @@ def Haas(metric, dataloader, model, cam_instance):
     
     '''
     Arguments
-    metric: one of 'accuracy', 'recall', 'f1'
+    metric: one of 'accuracy', 'recall', 'weighted_f1_score', 'balanced_accuracy'
     dataloader: data loaded via Dataloaders. Normalized in [-1,1] (usually via transforms.Normalize w/ mean=std=[0.5, 0.5, 0.5])
     model: pytorch model
     cam_instance
@@ -23,7 +23,7 @@ def Haas(metric, dataloader, model, cam_instance):
     images, ha_images, targets: summary of the correctly classified datapoints
     '''          
     
-    assert metric in ['accuracy', 'recall', 'f1']
+    assert metric in ['accuracy', 'recall', 'weighted_f1_score', 'balanced_accuracy']
     
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
@@ -54,11 +54,14 @@ def Haas(metric, dataloader, model, cam_instance):
         score = round(accuracy_score(targets, y_pred), 2)
         ha_score = round(accuracy_score(targets, ha_y_pred), 2)
     elif metric == 'recall':
-        score = round(recall_score(targets, y_pred), 2)
-        ha_score = round(recall_score(targets, ha_y_pred), 2)
-    elif metric == 'f1':
-        score = round(f1_score(targets, y_pred), 2)
-        ha_score = round(f1_score(targets, ha_y_pred), 2)
+        score = round(recall_score(targets, y_pred, average='macro'), 2)
+        ha_score = round(recall_score(targets, ha_y_pred, average='macro'), 2)
+    elif metric == 'weighted_f1_score':
+        score = round(f1_score(targets, y_pred, average='weighted'), 2)
+        ha_score = round(f1_score(targets, ha_y_pred, average='weighted'), 2)
+    elif metric == 'balanced_accuracy':
+        score = round(balanced_accuracy_score(targets, y_pred), 2)
+        ha_score = round(balanced_accuracy_score(targets, ha_y_pred), 2)
    
     print('Score over original images: ', score)
     print('Score over HA images: ', ha_score)
