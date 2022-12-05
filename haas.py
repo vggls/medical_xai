@@ -9,7 +9,7 @@ import torch
 
 #-----------------------------------------------------------------------------------------
 
-def Haas(metric, dataloader, model, cam_instance, target_layer=None):
+def Haas(metric, dataloader, model, cam_instance):
     
     '''
     Arguments
@@ -17,7 +17,6 @@ def Haas(metric, dataloader, model, cam_instance, target_layer=None):
     dataloader: data loaded via Dataloaders. Normalized in [-1,1] (usually via transforms.Normalize w/ mean=std=[0.5, 0.5, 0.5])
     model: pytorch model
     cam_instance
-    target_layer: the layer wrt which the gradients are computed in 'hirescam'
          
     Outputs
     haas_score: as per formula (5) of the aforementioned paper
