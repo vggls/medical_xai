@@ -40,6 +40,6 @@ def heatmap(pixel_attributions, region_size):
     for i in range(heatmap.shape[0]):
         for j in range(0, heatmap.shape[0]):
             regions_dict[i,j] = heatmap[i,j]
-    regions = sorted(regions_dict.items(), key=lambda x: x[1], reverse=True)
+    heatmap_regions = sorted(regions_dict.items(), key=lambda x: x[1], reverse=True)
     
-    return heatmap, regions
+    return heatmap, heatmap_regions
