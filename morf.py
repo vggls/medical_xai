@@ -151,4 +151,4 @@ def AOPC_Dataset(dataloader,
     # Note that we should not multiply by (1/(L+1)) again. Already done in MoRF class.
     dataset_aopc_score = (1/len(scores)) * sum(scores)
       
-    return round(dataset_aopc_score, 2), differences
+    return differences, round(dataset_aopc_score, 2)
