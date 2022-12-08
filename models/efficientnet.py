@@ -15,7 +15,11 @@ class EfficientNet():
         self.trainable_feature_layers = trainable_feature_layers
         self.custom_classifier = custom_classifier
         
-        if self.type_ == 'b3':
+        if self.type_ == 'b1':
+            self.model = models.efficientnet_b1(pretrained=True)
+        elif self.type_ == 'b2':
+            self.model = models.efficientnet_b2(pretrained=True)
+        elif self.type_ == 'b3':
             self.model = models.efficientnet_b3(pretrained=True)
         elif self.type_ == 'b4':
             self.model = models.efficientnet_b4(pretrained=True)
