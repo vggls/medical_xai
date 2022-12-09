@@ -21,7 +21,7 @@ This repo is organized as follows:
 
     We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
 
-- **morf.py** : For a given tensor and model, the 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a method that extends the calculation on a dataset level, when the data are called via Dataloaders. Currenlty, custom for 'CAM' algorithms
+- **morf.py** : The 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. <br/> The file also includes a 'CAM'-customized method that extends the calculation on a dataset level.
 
 - **haas.py** : Calculation of the HAAS score for evaluation of 'CAM' algorithms
 
