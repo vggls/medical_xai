@@ -21,9 +21,11 @@ This repo is organized as follows:
 
     We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
 
+- **max_sensitivity.py** : Calculation of the Max Sensitivity score. Customized for 'CAM' explainability algorithms.
+
 - **morf.py** : The 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a 'CAM'-customized method that extends the calculation on a dataset level.
 
-- **haas.py** : Calculation of the HAAS score for evaluation of 'CAM' algorithms
+- **haas.py** : Calculation of the HAAS score. Customized for 'CAM' explainability algorithms.
 
 - **overlay.py** : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
 
