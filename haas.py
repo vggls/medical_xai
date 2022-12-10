@@ -16,8 +16,11 @@ def Haas(metric, dataloader, model, cam_instance):
     metric: one of 'accuracy', 'recall', 'weighted_f1_score', 'balanced_accuracy'
     dataloader: data loaded via Dataloaders. Normalized in [-1,1] (usually via transforms.Normalize w/ mean=std=[0.5, 0.5, 0.5])
     model: pytorch model
-    cam_instance
-         
+    cam_instance: pytorch_grad_cam instance
+                  ex. cam = HiResCAM(model=model, target_layers=target_layers, use_cuda=True)
+    
+    Remark: Instead of the cam_instance I could have writtenn 'target_layers' and 'algorithm_type' (HiResCAM, GradCAM etc) arguments.
+    
     Outputs
     haas_score: as per formula (5) of the aforementioned paper
     images, ha_images, targets: summary of the correctly classified datapoints
