@@ -3,7 +3,6 @@ In this file there is a detailed description of the class attributes included in
     --> type_: densenet.py --> one of '121', '169', '201'
                resnet.py --> one of '18', '34', '50', '101', '152'
                resnext.py --> one of '50_32x4d', '101_32x8d'
-               vgg.py --> one of '16', '19'
                efficientnet.py --> one of 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'
 
     --> no_of_classes: integer
