@@ -34,17 +34,11 @@ In this file there is a detailed description of the class attributes included in
                                                                      |      inception5a :   14       |
                                                                      |      inception5b :   15       |
                                    In the above structures, note that ReLU and MaxPool layers do not have trainable params
-                                  ----------------------------------------------------------------
-                                  
-                                  Vgg16: 31 feature layers indexed from 0 to 30
-                                  Vgg19: 37 feature layers indexed from 0 to 36
-                                  
-                                  ----------------------------------------------------------------
-                                  
+                                  ------------------------------------------------------------------
                                   EfficientNets: 9 features layers indexed from 0 to 8
                                                  0 and 8 are 'Conv2dNormActivation' blocks  while 1-7 are sequential structures of MBConv blocks
                                                  As the type increases (i.e. b3-b7) the number of MBConv blocks increases as well.
-                                  ----------------------------------------------------------------
+                                  ------------------------------------------------------------------
     
     --> custom_classifier: Default 'None' value means that we consider the standard classifier 
                            as imported by torchvision along with an additional Softmax layer.
@@ -54,5 +48,3 @@ In this file there is a detailed description of the class attributes included in
                               ('1', nn.Linear(in_features=256, out_features=no_of_classes, bias=True)),
                               ('2', nn.Softmax(dim=1))
                             ]))
-           remark: For VGG models, the first layer should be an 'adaptive max pool 1d' or similar with any desired output_size. 
-                    Then note that the following nn.Linear layer should have the same input_size.
