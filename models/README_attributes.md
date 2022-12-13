@@ -6,7 +6,8 @@ In this file there is a detailed description of the class attributes included in
 
     --> no_of_classes: integer
 
-    --> trainable_feature_layers: This attribute is either 'None' (default) OR a list of indices where each index 
+    --> trainable_feature_layers / trainable_layers:
+                                  This attribute is either 'None' (default) OR a list of indices where each index 
                                   corresponds to the layer index among the model's features. The list allows the user 
                                   to choose any layers of preference for training regardless of their position in the architecture.
                                   As per .py files, we note that the classifier / fully connected part of the network is always trainable
@@ -39,6 +40,8 @@ In this file there is a detailed description of the class attributes included in
                                                  0 and 8 are 'Conv2dNormActivation' blocks  while 1-7 are sequential structures of MBConv blocks
                                                  As the type increases (i.e. b3-b7) the number of MBConv blocks increases as well.
                                   ------------------------------------------------------------------
+                                  
     --> flatten: Boolean set to 'True' by default. When 'True' the GAP layer is replaced by a Flatten layer. If 'False' the GAP layer is chosen.
-                 Note that we allow replacing the GAP layer by a Flatten one in order to make use of the full capabilities of the HiResCAM algorithm.
-                 If we keep the GAP pooling, then as explained in the official HiResCAM paper (--> https://arxiv.org/pdf/2011.08891.pdf), HiResCAM reduces to CAM.
+                 Note that we allow replacing the GAP layer by a Flatten one in order to make use of the full capabilities of the HiResCAM
+                 XAI algorithm. If we keep the GAP pooling, then as explained in the official HiResCAM paper 
+                 (--> https://arxiv.org/pdf/2011.08891.pdf), HiResCAM reduces to CAM.
