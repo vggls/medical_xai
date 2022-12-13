@@ -1,8 +1,7 @@
 In this file there is a detailed description of the class attributes included in the accompanying model py files.
 
     --> type_: densenet.py --> one of '121', '169', '201'
-               resnet.py --> one of '18', '34', '50', '101', '152'
-               resnext.py --> one of '50_32x4d', '101_32x8d'
+               resnet.py --> one of '34', '50', '101', '152'
                efficientnet.py --> one of 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'
 
     --> no_of_classes: integer
@@ -14,7 +13,7 @@ In this file there is a detailed description of the class attributes included in
                                   
                                   Per pretrained architecture the trainable layers are indexed as follows :
                                   
-                                  ----------DenseNets-----------     |    ------GoogLeNet--------    |    ------ResNe(X)ts--------  
+                                  ----------DenseNets-----------     |    ------GoogLeNet--------    |    ------ResNets--------  
                                       LAYER               INDEX      |      LAYER         INDEX      |      LAYER        INDEX
                                   features.conv0       :    0        |      conv1       :   0        |      conv1     :    0
                                   features.norm0       :    1        |      maxpool1    :   1        |      bn1       :    1
@@ -34,16 +33,12 @@ In this file there is a detailed description of the class attributes included in
                                                                      |      inception5b :   15       |
                                    In the above structures, note that ReLU and MaxPool layers do not have trainable params
                                   ------------------------------------------------------------------
+     
+     
                                   EfficientNets: 9 features layers indexed from 0 to 8
                                                  0 and 8 are 'Conv2dNormActivation' blocks  while 1-7 are sequential structures of MBConv blocks
                                                  As the type increases (i.e. b3-b7) the number of MBConv blocks increases as well.
                                   ------------------------------------------------------------------
-    
-    --> custom_classifier: Default 'None' value means that we consider the standard classifier 
-                           as imported by torchvision along with an additional Softmax layer.
-                           Otherwise a custom classifier could be put on top of the model. 
-           example: custom_classifier = nn.Sequential(OrderedDict([
-                              ('0', nn.Linear(in_features=1024, out_features=256, bias=True)),
-                              ('1', nn.Linear(in_features=256, out_features=no_of_classes, bias=True)),
-                              ('2', nn.Softmax(dim=1))
-                            ]))
+    --> flatten: Boolean set to 'True' by default. When 'True' the GAP layer is replaced by a Flatten layer. If 'False' the GAP layer is chosen.
+                 Note that we allow replacing the GAP layer by a Flatten one in order to make use of the full capabilities of the HiResCAM algorithm.
+                 If we keep the GAP pooling, then as explained in the official HiResCAM paper (--> https://arxiv.org/pdf/2011.08891.pdf), HiResCAM reduces to CAM.
