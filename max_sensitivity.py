@@ -132,6 +132,7 @@ def MaxSensitivity_Dataset(dataset, model, cam_instance, radius, iterations):
     print('Total time: {} secs'.format(total_time))
     print('Correctly predicted images: {}/{}'.format(j,i))
     print('No. of correctly classified images that were skipped due to almost 0 explanation matrix norm: {}'.format(j - len(data_scores)))
+    print('Avg secs per image: ', round(total_time/j, 2))
         
     return round(mean_score, 3), data_scores
 
