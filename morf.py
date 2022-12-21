@@ -150,6 +150,7 @@ def AOPC_Dataset(dataset,
       
     print('Total time: {} secs'.format(total_time))
     print('No of correctly classified images: {}/{}'.format(no_of_correctly_classified, len(dataset)))
+    print('Avg secs per image: ', round(total_time/no_of_correctly_classified, 2))
        
     # Average over all image scores to calculate the final score
     # Note that we should not multiply by (1/(L+1)) again. Already done in MoRF class.
