@@ -7,7 +7,7 @@ Remark
     The methods of the 'Image level calculations' section are taken from the 'infid_sen_utils.py' file of the authors' 
     aforementioned GitHub page and adjusted accordingly to pytorch_grad_cam class instances.
     The methods of the 'Dataset level calculations' section are custom written functions that extend the notion of the
-    Max Sensitivity metric to a Dataset level (data are loaded via Dataloaders). This is achieved by calculating the
+    Max Sensitivity metric to a Dataset level (data are loaded via ImageFolder method). We calculate the
     average Max Sensitivity value over the correctly classified images.
     
 '''
