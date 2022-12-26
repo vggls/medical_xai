@@ -9,7 +9,8 @@ ATTRIBUTIONS
              # pip install grad-cam
              from pytorch_grad_cam import HiResCAM
              cam = HiResCAM(model=model, target_layers=target_layers, use_cuda=True)
-             pixel_attributions = cam(input_tensor=tensor.unsqueeze(0))[0,:,:]  # numpy.ndarray, 2-dim, values in [0,1]
+             #targets = [ClassifierOutputTarget(class_of_interest_as_integer))]
+             pixel_attributions = cam(input_tensor=tensor.unsqueeze(0), targets=None )[0,:,:]  # numpy.ndarray, 2-dim, values in [0,1]
         d) Remarks on the target_layer attribute:
             - It is the layer wrt which we compute the class derivatives
             - Usually this will be the last convolutional layer in the model.
