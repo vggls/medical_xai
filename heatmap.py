@@ -33,7 +33,7 @@ from skimage.measure import block_reduce
 
 def Heatmap(pixel_attributions, region_size):
             
-    assert pixel_attributions.shape[0]%region_size == 0
+    #assert pixel_attributions.shape[0]%region_size == 0
     
     heatmap = block_reduce(pixel_attributions, (region_size, region_size), np.mean)  # AvgPooling
     
