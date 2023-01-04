@@ -1,6 +1,6 @@
 This repo is organized as follows:
 
-- **models** folder : custom written classes which instantiate pretrained models with adjustable no. of classes, frozen layers and Flatten or GAP layer
+- **models** folder : custom written classes which instantiate pretrained models with adjustable no. of classes and frozen layers
 
 - **training & testing** folder <br/>
     
