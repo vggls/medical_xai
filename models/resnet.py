@@ -15,7 +15,7 @@ class ResNet():
         2. Remove GAP layer. It is replaced with a flattened one coming from the last Conv2d layer
         3. Add Softmax after the Linear layer
             Rmk: Due to the flattened layer the in_features of the Linear layer should change as well. 
-                One may use the summary method from torchvision to determine the number of nodes in the flattened layer.
+                 One may use the summary method from torchvision to determine the number of nodes in the flattened layer.
     '''
     
     def __init__(self, 
