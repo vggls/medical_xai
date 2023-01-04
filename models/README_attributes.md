@@ -26,7 +26,7 @@ In this file there is a detailed description of the class attributes included in
                                   features.denseblock3 :    8        |      inception4a :   8        |
                                   features.transition3 :    9        |      inception4b :   9        |
                                   features.denseblock4 :    10       |      inception4c :   10       |
-                                  features.norm5       :    11       |      inception4d :   11       |
+                                                                     |      inception4d :   11       |
                                                                      |      inception4e :   12       |
                                                                      |      maxpool4    :   13       |
                                                                      |      inception5a :   14       |
