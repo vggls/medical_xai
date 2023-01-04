@@ -7,11 +7,11 @@ class DenseNet():
     '''
     ATTRIBUTES: see README_attributes.md
     
-    Custom written ResNet class.
+    Custom written DenseNet class.
     
     The models are imported from torchvision and the following adjustments are made:
-        1. After the last Conv2d layer, we replace last BatchNorm2d by Flattened layer
-        2. Add Softmax after the Linear layer
+        1. The last feature layer 'BatchNorm2d' is removed
+        2. Flatten and Softmax are included before and after the Linear layer
 
     '''
     
