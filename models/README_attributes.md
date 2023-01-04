@@ -1,8 +1,7 @@
 In this file there is a detailed description of the class attributes included in the accompanying model py files.
 
     --> type_: densenet.py --> one of '121', '169', '201'
-               resnet.py --> one of '34', '50', '101', '152'
-               efficientnet.py --> one of 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'
+               resnet.py --> one of '34', '50'
 
     --> no_of_classes: integer
 
@@ -32,16 +31,7 @@ In this file there is a detailed description of the class attributes included in
                                                                      |      maxpool4    :   13       |
                                                                      |      inception5a :   14       |
                                                                      |      inception5b :   15       |
-                                   In the above structures, note that ReLU and MaxPool layers do not have trainable params
-                                  ------------------------------------------------------------------
-     
-     
-                                  EfficientNets: 9 features layers indexed from 0 to 8
-                                                 0 and 8 are 'Conv2dNormActivation' blocks  while 1-7 are sequential structures of MBConv blocks
-                                                 As the type increases (i.e. b3-b7) the number of MBConv blocks increases as well.
-                                  ------------------------------------------------------------------
-                                  
-    --> flatten: Boolean set to 'True' by default. When 'True' the GAP layer is replaced by a Flatten layer. If 'False' the GAP layer is chosen.
-                 Note that we allow replacing the GAP layer by a Flatten one in order to make use of the full capabilities of the HiResCAM
-                 XAI algorithm. If we keep the GAP pooling, then as explained in the official HiResCAM paper 
-                 (--> https://arxiv.org/pdf/2011.08891.pdf), HiResCAM reduces to CAM.
+                                  -------------------------------------------------------------------------------------------------
+                                  In the above structures, note that ReLU and MaxPool layers do not have trainable params
+ 
+
