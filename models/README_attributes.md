@@ -1,7 +1,6 @@
 In this file there is a detailed description of the class attributes included in the accompanying model py files.
 
-    --> type_: densenet.py --> one of '121', '169', '201'
-               resnet.py --> one of '34', '50'
+    --> (resnet.py) type_: one of '34', '50'
 
     --> no_of_classes: integer
 
