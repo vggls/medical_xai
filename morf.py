@@ -141,7 +141,7 @@ class MoRF():
       L = len(self.heatmap_regions)
       score = (1/(L+1)) * sum(differences)
 
-      return differences, round(score, 2)
+      return differences, round(score, 3)
 
 #------Dataset Level----------------------------------------------------------------------------------------------------
 
@@ -197,7 +197,7 @@ def AOPC_Dataset(dataset,
     print('No of correctly classified images: {}/{}'.format(no_of_correctly_classified, len(dataset)))
     print('Avg secs per image: ', round(total_time/no_of_correctly_classified, 2))
            
-    aopc = round(sum(scores)/len(scores), 2)
+    aopc = round(sum(scores)/len(scores), 3)
     
     return differences, scores, aopc
 
