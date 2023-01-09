@@ -45,12 +45,14 @@ class MoRF():
 
       # list to store all predicted probabilities of the top predicted class
       perturbations = []
+      softmax = nn.Softmax(dim=1)
 
       # top predicted class info
-      predict = self.model(self.tensor)
-      index = torch.argmax(predict)                   # index of the top predicted class
-      prob = round(float(predict[0,index]),3)         # probability of the top predicted class
-      perturbations.append(prob)
+      raw_scores = self.model(self.tensor)            # tensor of raw class scores
+      probs = softmax(raw_scores)                     # probability distribution (via softmax)
+      index = torch.argmax(probs)                     # index of the top predicted class
+      class_prob = round(float(probs[0,index]),3)     # probability of the top predicted class
+      perturbations.append(class_prob)
 
       image = self.tensor.detach().clone()            # do this in order to have access to the initial tensor after the perturbations
 
@@ -90,7 +92,9 @@ class MoRF():
         #plt.imshow(image.squeeze(0).permute(1, 2, 0).cpu().numpy())
         #plt.show()
         # make prediction and get value via the index used above (see prob variable line). this value will be the class predicted probability
-        perturbed_prob = round(float(self.model(image)[0,index]), 3)
+        perturbed_raw_scores = self.model(image)
+        perturbed_probs = softmax(perturbed_raw_scores)
+        perturbed_prob = round(float(perturbed_probs[0,index]), 3)
         
         # append the value to perturbations
         perturbations.append(perturbed_prob)
