@@ -61,7 +61,7 @@ class ResNet():
         #      we see (at lines 278-279) that the avgpool layer is followed by a torch.flatten(~,1) layer.
         #      By replacing the GAP layer with nn.Flatten() we see that the data is preserved in the exact 
         #      way via the two consequtive flattening layers
-        #      Run this code for confirmation: 
+        #      Run this code to confirm that 'out' and 'x' are equal: 
         #                        input = torch.randn(8,7,7)
         #                        nnfl = nn.Flatten()
         #                        out = nnfl(input)
