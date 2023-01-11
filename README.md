@@ -1,7 +1,8 @@
 This repo is organized as follows:
 
-- **models** folder : Custom written classes which instantiate pretrained models with adjustable no. of classes and trainable layers.
-                      Each model has the following structure : CNN ending in a Conv2d layer - Flatten - Raw class scores.
+- **models** folder <br/>
+
+    Custom written classes which instantiate pretrained models with adjustable no. of classes and trainable layers. Each model has the following structure : CNN ending in a Conv2d layer - Flatten - Raw class scores.
 
 - **training & testing** folder <br/>
     
