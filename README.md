@@ -1,34 +1,27 @@
 This repo is organized as follows:
 
-- **models** folder : custom written classes which instantiate pretrained models with adjustable no. of classes and frozen layers
+- **models** folder : Custom written classes which instantiate pretrained models with adjustable no. of classes and trainable layers.
+                      Each model has the following structure : CNN ending in a Conv2d layer - Flatten - Raw class scores.
 
 - **training & testing** folder <br/>
     
     - **imbalanced.py** : Creates class weights and a WeighterRandomSampler instance to address class imbalance in the dataset
     - **training_loop.py** : Training loop class implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase.
           In addition the following **regularization** techniques are included : <br/>
-          a) Early Stopping regularization tenchnique. Note that since the code is written for medical tasks purposes, the method monitors improvements on the validation loss and the average validation recall scores of the disease related classes. <br/>
-          b) Scheduled control of the optimizer learning rate. Application is optional via the 'scheduler' attribute.
+          a) Early Stopping regularization tenchnique. It is build with a focus on medical tasks and monitors improvements on the validation loss and the average validation recall scores of the disease related classes. <br/>
+          b) Scheduled control of the optimizer learning rate (optional).
           
     - **train_model.py** : Includes the 'fit' method which loads data via DataLoaders and trains a model according to training_loop.py
     - **testing_report.py** : Calculates classification report, balanced accuracy score and ROC and PR curves and scores for given model and dataloader object
 
-- **heatmap.py** : Includes function that accepts pixel-level attributions obtained by XAI algorithm (ex. HiResCAM) and calculates 
+- **utils** folder <br/>
+
+    - **heatmap.py** : Method that converts a pixel-level attribution map (ex. as obtained by GradCAM) to a region-level attribution map.
+    - **overlay.py** : Method that generates a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
+    - **plot_tensor.py**: Method that converts [-1,1]-valued tensor to [0,1]-valued tensor. To be used for plotting purposes.
+
+- **xai_metrics** folder <br/>
     
-    - A region-level heatmap, named 'heatmap', which emerges by applying AvgPooling transformation on the pixel attributions.
-    
-    - A list of the 'heatmap' regions in descending order of importance. The list is named 'regions'.
+    Contains implementation of AOPC, Max Sensitivity and HAAS metrics for evaluation of XAI attribution maps. The methods are customized to 'CAM' algorithms as imported by [pytorch_grad_cam](https://github.com/jacobgil/pytorch-grad-cam) collection.
 
-    We note that 'heatmap' and 'regions' will serve as the main tools for the calculation of the xai evaluation metric called AOPC, in *morf.py*
-
-- **max_sensitivity.py** : Calculation of the Max Sensitivity score. Customized for 'CAM' explainability algorithms.
-
-- **morf.py** : The 'MoRF' class implements the MoRF tenchnnique for heatmap evaluation and calculates the AOPC score. The file also includes a 'CAM'-customized method that extends the calculation on a dataset level.
-
-- **haas.py** : Calculation of the HAAS score. Customized for 'CAM' explainability algorithms.
-
-- **overlay.py** : In this file we generate a super-imposed version of the original image by adding a weighted version of the XAI algorithm heatmap.
-
-- **plot_tensor.py**: Code that converts [-1,1]-values tensor to [0,1]-values tensor, for plotting purposes.
-
-Remark: At the beginning of each .py file, in the comments section, we have included the sources used (theory, code etc) along with remarks and the main ideas, where necessary.
+Remark: At the beginning of each .py file, in the comments section, there are sources (theory, code etc) along with remarks and the main ideas, where necessary.
