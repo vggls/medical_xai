@@ -208,7 +208,7 @@ def AOPC_Dataset(dataset,
     return differences, scores, aopc
 
 
-def plot_aopc_per_step(differences, no_of_correctly_classified, plot_title):
+def plot_aopc_per_step(differences, no_of_correctly_classified, plot=False, plot_title=None):
         
     cumulative = list(np.cumsum(differences))
     
@@ -221,6 +221,9 @@ def plot_aopc_per_step(differences, no_of_correctly_classified, plot_title):
 
     data = {'steps': [i for i in range(len(cumulative))], 'AOPC': aopc}
     df = pd.DataFrame.from_dict(data)
-
-    fig = px.line(df, x='steps', y='AOPC', height=400, width=600, title=plot_title)
-    fig.show()
+    
+    if plot:
+        fig = px.line(df, x='steps', y='AOPC', height=400, width=600, title=plot_title)
+        fig.show()
+    
+    return df
