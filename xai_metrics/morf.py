@@ -160,8 +160,13 @@ def AOPC_Dataset(dataset,
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
     
-    L = (224//region_size)**2         #by default all images are 224*224; as per pretrained models recommended size
-    
+    tensor, label = dataset[0]
+    tensor = tensor.to(device)
+    img_size = tensor.shape[3]
+    if img_size%region_size==0:
+        L = (img_size//region_size)**2         #by default all images are 224*224; as per pretrained models recommended size
+    else:
+        L = (img_size//region_size + 1)**2
     differences = [0] * (L+1)
         
     scores = []
