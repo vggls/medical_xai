@@ -254,4 +254,4 @@ class _DenseNet169_():
                 param.requires_grad = False
     
     def trainable_params(self):
-        print('No. of trainable feature params', sum(p.numel() for p in self.model.parameters() if p.requires_grad))
+        print('No. of trainable params', sum(p.numel() for p in self.model.parameters() if p.requires_grad))
