@@ -164,7 +164,7 @@ def AOPC_Dataset(dataset,
     tensor = tensor.to(device)
     img_size = tensor.shape[2]
     if img_size%region_size==0:
-        L = (img_size//region_size)**2         #by default all images are 224*224; as per pretrained models recommended size
+        L = (img_size//region_size)**2         
     else:
         L = (img_size//region_size + 1)**2
     differences = [0] * (L+1)
