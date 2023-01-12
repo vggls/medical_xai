@@ -60,8 +60,8 @@ def Haas(dataset, model, cam_instance):
     score = round(accuracy_score(targets, y_pred), 2)
     ha_score = round(accuracy_score(targets, ha_y_pred), 2)
    
-    print('Score over original images: ', score)
-    print('Score over HA images: ', ha_score)
+    print('Accuracy over original images: ', score)
+    print('Accuracy over HA images: ', ha_score)
   
     haas_score = round(ha_score / score, 2)
     
