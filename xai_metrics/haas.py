@@ -4,17 +4,16 @@ Source
 """
 
 import numpy as np
-from sklearn.metrics import accuracy_score, balanced_accuracy_score
+from sklearn.metrics import accuracy_score
 import torch
 import time
 
 #-----------------------------------------------------------------------------------------
 
-def Haas(metric, dataset, model, cam_instance):
+def Haas(dataset, model, cam_instance):
     
     '''
     Arguments
-    metric: one of 'accuracy' or 'balanced_accuracy'
     dataset: data loaded via pytorch ImageFolder method. Normalized in [-1,1] (usually via transforms.Normalize w/ mean=std=[0.5, 0.5, 0.5])
     model: pytorch model
     cam_instance
@@ -23,9 +22,7 @@ def Haas(metric, dataset, model, cam_instance):
     haas_score: as per formula (5) of the aforementioned paper
     images, ha_images, targets: summary of the correctly classified datapoints
     '''          
-    
-    assert metric in ['accuracy', 'balanced_accuracy']
-    
+        
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     
     model.to(device)
@@ -60,12 +57,8 @@ def Haas(metric, dataset, model, cam_instance):
     
     print('Total time: {} secs'.format(t1-t0))
     
-    if metric == 'accuracy':
-        score = round(accuracy_score(targets, y_pred), 2)
-        ha_score = round(accuracy_score(targets, ha_y_pred), 2)
-    elif metric == 'balanced_accuracy':
-        score = round(balanced_accuracy_score(targets, y_pred), 2)
-        ha_score = round(balanced_accuracy_score(targets, ha_y_pred), 2)
+    score = round(accuracy_score(targets, y_pred), 2)
+    ha_score = round(accuracy_score(targets, ha_y_pred), 2)
    
     print('Score over original images: ', score)
     print('Score over HA images: ', ha_score)
