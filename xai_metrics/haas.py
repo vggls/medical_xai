@@ -77,7 +77,7 @@ def HA_image(image, attributions):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     
     channel_scalar = torch.from_numpy(attributions).to(device) + \
-        torch.ones(attributions.shape[0], attributions.shape[1]).to(device)  # 3dim torch tensor
+        torch.ones(attributions.shape[0], attributions.shape[1]).to(device)
     for channel in range(image.shape[0]):
         image[channel,:,:] = image[channel,:,:] * channel_scalar
     ones = torch.ones(image.shape[0], image.shape[1], image.shape[2]).to(device)
