@@ -110,7 +110,7 @@ class Train():
             outputs = self.model(images)                    #forward
             loss = self.loss_fct(outputs, labels)           #compute loss
             loss.backward()                                 #compute loss gradients wrt weights via backpropagation
-            self.optimizer.step()                           #update weights via gd based rule
+            self.optimizer.step()                           #update weights via sgd based rule
             
             train_loss += loss.item()                       #add batch loss to the total epoch train loss
     
