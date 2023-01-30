@@ -105,12 +105,13 @@ class Train():
         for train_step, (images, labels) in enumerate(self.train_loader): 
             images, labels = images.to(self.device), labels.to(self.device)  #send data to device 
     
-            # batch training
+            # batch training (key part of the loop)
             self.optimizer.zero_grad()                      #zero the parameter gradients
             outputs = self.model(images)                    #forward
             loss = self.loss_fct(outputs, labels)           #compute loss
-            loss.backward()                                 #backward
-            self.optimizer.step()                           #optimize
+            loss.backward()                                 #compute loss gradients wrt weights via backpropagation
+            self.optimizer.step()                           #update weights via gd based rule
+            
             train_loss += loss.item()                       #add batch loss to the total epoch train loss
     
             # class metrics - batch level
