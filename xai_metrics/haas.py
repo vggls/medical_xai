@@ -1,6 +1,11 @@
 """
 Source 
     - Paper: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759
+    
+     quote from page 4:
+     When HAAS is larger than 1.0, the HA images improve the accuracy of the classification model,
+     leading to the conclusion that heatmap scores extracted by the XAI algorithm are explaining the feature’s importance well.
+     Conversely, less HAAS than 1.0 means that HA images have deteriorated the performance due to the incorrectly extracted explanation.
 """
 
 import numpy as np
