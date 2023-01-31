@@ -107,11 +107,11 @@ class Train():
     
             # batch training (key part of the loop)
             self.optimizer.zero_grad()                      #zero the parameter gradients
-            outputs = self.model(images)                    #-forward pass
-            loss = self.loss_fct(outputs, labels)           #--compute loss
-            loss.backward()                                 #-compute loss gradients wrt weights via backpropagation (backward pass)
-            self.optimizer.step()                           #-update weights via sgd based rule
-            train_loss += loss.item()                       #--add batch loss to the total epoch train loss
+            outputs = self.model(images)                    #forward pass
+            loss = self.loss_fct(outputs, labels)           #compute loss
+            loss.backward()                                 #compute loss gradients wrt weights via backpropagation (backward pass)
+            self.optimizer.step()                           #update weights via sgd based rule
+            train_loss += loss.item()                       #add batch loss to the total epoch train loss
     
             # class metrics - batch level
             labels_list = torch.Tensor.tolist(labels)
