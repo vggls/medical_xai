@@ -90,16 +90,10 @@ class Train():
             if self.scheduler != None:
                 self.scheduler.step()    
         
-        if self.patience != None:
-            try:
-                last_saved_model_epoch = len(self.validation_history['loss']) - self.patience
-                files.download(f'./model_epoch{last_saved_model_epoch}.pt')
-            except:
-                pass
-        else:
+        if self.patience == None:
             current_epoch = len(self.validation_history['loss'])
             torch.save(self.model, f'model_epoch{current_epoch}.pt')
-            files.download(f'./model_epoch{current_epoch}.pt')
+            #files.download(f'./model_epoch{current_epoch}.pt')
         
         print('Training complete !')
         return self.training_history, self.validation_history
