@@ -27,6 +27,6 @@ This repo is organized as follows:
 
 - **example_xrays** folder <br/>
 
-    Use of AOPC and Max Sensitivity scores in order to compare GradCAM and HiResCAM xai algorithms.
+    Use of AOPC and Max Sensitivity scores in order to compare GradCAM and HiResCAM xai algorithms on X-Ray images.
 
 Remark: At the beginning of each .py file, in the comments section, there are sources (theory, code etc) along with remarks and the main ideas, where necessary.
