@@ -8,9 +8,9 @@ This repo is organized as follows:
     
     - **imbalanced.py** : Creates class weights and a WeighterRandomSampler instance to address class imbalance in the dataset
     - **training_loop.py** : Training loop class implementation for a NN model. Per epoch we compute the loss and class metrics of the training and validation phase.
-          In addition the following **regularization** techniques are included : <br/>
+          In addition the following **regularization** optional techniques are included : <br/>
           a) Early Stopping regularization tenchnique. It is build with a focus on medical tasks and monitors improvements on the validation loss and the average validation recall scores of the disease related classes. <br/>
-          b) Scheduled control of the optimizer learning rate (optional).
+          b) Scheduled control of the optimizer learning rate.
           
     - **train_model.py** : Includes the 'fit' method which loads data via DataLoaders and trains a model according to training_loop.py
     - **testing_report.py** : Calculates classification report, balanced accuracy score and ROC and PR curves and scores for given model and dataloader object
