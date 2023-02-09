@@ -5,20 +5,19 @@ Remarks on training_loop.py
       - 'scheduler' attribute: Either 'None' or a https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.StepLR.html instance.
 
   2. The training loop ('training' method) focuses on training a *medical task model*.
-      This means that we are mainly interested in the recall scores of the unhealthy classes.
+      This means that we are mainly interested in the recall scores of the 'unhealthy' classes.
       
       For this purpose, the callback function is an Early Stopping technique focusing on 
       the improvement of the validation loss and avg recall of the 'unhealthy' classes.
       
-      By 'unhealthy' classes we refer to the non-normal classes of a dataset.
+      By 'unhealthy' classes we refer to the non-normal classes of a dataset or to the classes whose progress can be ignored during training.
+      The 'unhealthy' classes are determined by the 'labels_of_normal_classes' attribute. It should be either 'None' or a list of integers.
       
-      In ordet to determine the 'unhealthy' classes the 'labels_of_normal_classes' attribute should be used.
-      
-      For instance, consider a dataset with classes labelled by 0,1,2 where 0 and 2 are cancerous cells and 1 is a healthy cell.
+      ex. We consider a dataset with classes labelled by 0,1,2 where 0 and 2 are cancerous cells and 1 is a healthy cell.
       This attribute allows to stop training only when the cancerous classes are well classified witout being affected by the normal
       class results. Thus, in this scenario one may set labels_of_normal_classes = [1]
 
-  3. The resulting best model is saved in a .pt file
+  3. The resulting final/best model is saved in a .pt file
 
   4. The 'training' method returns two dictionaries that contain the loss and metrics history 
       for the training and validation phases respectively.
