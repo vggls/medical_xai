@@ -115,10 +115,11 @@ class Train():
     
             # batch training
             self.optimizer.zero_grad()                      #zero the parameter gradients
-            outputs = self.model(images)                    #forward
+            outputs = self.model(images)                    #forward pass     - To store all neuron values
             loss = self.loss_fct(outputs, labels)           #compute loss
-            loss.backward()                                 #backward
-            self.optimizer.step()                           #optimize
+            loss.backward()                                 #backpropagation  - Computes dloss/dw for every w such that "requires_grad=True"
+                                                            #                   They are accumulated into w.grad for every parameter w
+            self.optimizer.step()                           #update weight    - As per w += -lr * w.grad 
             train_loss += loss.item()                       #add batch loss to the total epoch train loss
     
             # class metrics - batch level
