@@ -53,3 +53,9 @@ class VGG19():
         
     def trainable_params(self):
         print('No. of trainable params', sum(p.numel() for p in self.model.parameters() if p.requires_grad))
+        
+    
+    def unfreeze(self):
+        for child in self.freeze:
+            for param in child.parameters():
+                param.requires_grad = True
