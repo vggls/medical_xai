@@ -115,11 +115,12 @@ class Train():
     
             # batch training
             self.optimizer.zero_grad()                      #zero the parameter gradients
-            outputs = self.model(images)                    #forward pass          - Store all neuron values (to be used in backpropagation)
-            loss = self.loss_fct(outputs, labels)           #batch loss fct value
-            loss.backward()                                 #backpropagation       - To compute dloss/dw for every w in outputs such that "requires_grad=True"
+            outputs = self.model(images)                    #forward pass*         - Store all neuron values (to be used in backpropagation)
+            loss = self.loss_fct(outputs, labels)           #batch loss fct value  - PyTorch specific step
+            loss.backward()                                 #backpropagation*      - Ask PyTorch to trace back the computation of 'loss' value
+                                                            #                        Thus it computes dloss/dw for every w in outputs such that "requires_grad=True"
                                                             #                        They are accumulated into w.grad for every parameter w
-            self.optimizer.step()                           #update weight         - As per w += -lr * w.grad 
+            self.optimizer.step()                           #update weight*        - As per w += -lr * w.grad
             train_loss += loss.item()                       #add batch loss to the total epoch train loss
     
             # class metrics - batch level
