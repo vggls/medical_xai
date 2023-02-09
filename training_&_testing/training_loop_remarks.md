@@ -1,18 +1,26 @@
 Remarks on training_loop.py
 
-  1. The training loop ('training' method) focuses on training a medical task model. 
+  1. Regularizers
+      - Early Stopping method: See remark 2 below for the condition it uses. The method is enabled by the 'patience' attribute, which is either integer or 'None'.
+      - 'scheduler' attribute: Either 'None' or a https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.StepLR.html instance.
+
+  2. The training loop ('training' method) focuses on training a *medical task model*.
       This means that we are mainly interested in the recall scores of the unhealthy classes.
+      
       For this purpose, the callback function is an Early Stopping technique focusing on 
-      the improvement of the validation loss and avg recall (see remark 7 as well) of the unhealthy classes (min_delta = 0) 
+      the improvement of the validation loss and avg recall of the 'unhealthy' classes.
+      
+      By 'unhealthy' classes we refer to the non-normal classes of a dataset.
+      
+      In ordet to determine the 'unhealthy' classes the 'labels_of_normal_classes' attribute should be used.
+      
+      For instance, consider a dataset with classes labelled by 0,1,2 where 0 and 2 are cancerous cells and 1 is a healthy cell.
+      This attribute allows to stop training only when the cancerous classes are well classified witout being affected by the normal
+      class results. Thus, in this scenario one may set labels_of_normal_classes = [1]
 
-  2. Per training epoch we see/print the progress of the loss, accuracy and recall metrics.
+  3. The resulting best model is saved in a .pt file
 
-  3. On 'scheduler' attribute: https://stackoverflow.com/questions/60050586/pytorch-change-the-learning-rate-based-on-number-of-epochs
-      Note that when scheduler is included, per epoch the in-force learning rate is printed as well.
-
-  4. The resulting best model is saved in a .pt file
-
-  5. The 'training' method returns two dictionaries that contain the loss and metrics history 
+  4. The 'training' method returns two dictionaries that contain the loss and metrics history 
       for the training and validation phases respectively.
       Each dictionary has the following self-explanatory keys: 
           - 'loss', 'accuracy', 'avg_recall', 'avg_precision', 'avg_f1'; 
@@ -20,23 +28,3 @@ Remarks on training_loop.py
           - 'recall_per_class', 'precision_per_class', 'f1_per_class';
               and the values are lists which consist of sublists equal to the number of classes.
               Each sublist describes the class metric history per epoch
-
-  6. The attribute 'labels_of_normal_classes' can be used in case we want to regularize training wrt to specific classes.
-      For instance, consider a dataset with classes labelled by 0,1,2 where 0 and 2 are cancerous cells and 1 is a healthy cell.
-      This attribute allows to stop training only when the cancerous classes are well classified witout being affected by the normal
-      class results. Thus, in this scenario one may set labels_of_normal_classes = [1]
-
-  7. On the condition of the Early Stopping callback: 
-   
-     Along with validation loss, the purpose is to monitor class recalls and save models with improved recall scores. 
-     Below are listed two metrics that one may try to measure multi-class recall scores (via a single number). Alternatively, custom metrics could be defined.
-     The choice of the final metric is determined by the testing report metrics of interest. 
-  
-     - In the code we consider the '(macro) average recall' of the 'un-normal' classes. In this case each class'es recall contributes the same weight to the calculated average. 
-     
-     - Alternatively, one may consider the 'weighted average recall', where each classe'es recall is weighted by the class instances as well. In the end the
-      resulting sum over all classes is divided the total number of instances.
-      ex. for two classes, the weighted avg recall would be: weighted_avg_recall=(r1∗|c1|)+(r2∗|c2|)|c1|+|c2| ,
-      where  r1  and  r2  are the recalls for class 1 and class 2, and  |c1|  and  |c2|  are the number of instances in class 1 and class 2.
-      Note that above calculation is equal to the 'accuracy' metric score.
-      
