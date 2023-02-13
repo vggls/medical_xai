@@ -16,7 +16,7 @@ while the Grad-CAM explanation does not.
      <img src="https://user-images.githubusercontent.com/55101427/218503517-dbc6f754-d487-4382-a5b4-ab48ef9a6552.png" height="300" width="550" />
    </p>
 
-**Thesis summary**
+**Thesis description**
 
 The main focus of this thesis is to present **a quantitative comparison between GradCAM and HiResCAM explainations** in the context of "non-GAP" CNNs of Figure 3,
 via attribution map evaluation metrics such as AOPC[4], Max-Sensitivity[5] and HAAS[6]. The experiments are conducted on medical image data and with custom written
