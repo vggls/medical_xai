@@ -9,7 +9,7 @@ the visualizations produced by CAM, Grad-CAM, and HiResCAM XAI algorithms are id
      <img src="https://user-images.githubusercontent.com/55101427/218502267-04f955ad-583f-471d-b9fe-8a6176f9918f.png" height="250" width="550" />
    </p>
 
-On the other hand, when the GAP layer is replaced by a Flatten layer (as per Figure 3) then one may see in [2] that the HiResCAM and Grad-CAM explanations are **no longer** identical. However, when calculating the gradients with respect to last convolutional layer then the HiResCAM explanation **provably** reflects the model's computations as it contributes directly to the raw class score calculation. At the same GradCAM fails to exhibit analogous promising behaviour.
+On the other hand, when the GAP layer is replaced by a Flatten layer (as per Figure 3) then one may find in [2] that the HiResCAM and Grad-CAM explanations are **no longer identical**. However, in this context, when calculating the gradients with respect to last convolutional layer then the HiResCAM explanation **provably** reflects the model's computations as it contributes directly to the raw class score calculation. At the same GradCAM fails to exhibit analogous promising behaviour.
 
 <p align="center">
      <img src="https://user-images.githubusercontent.com/55101427/218503517-dbc6f754-d487-4382-a5b4-ab48ef9a6552.png" height="300" width="550" />
