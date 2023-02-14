@@ -4,13 +4,13 @@ We consider the gradient-based GradCAM[1] and HiResCAM[2] XAI algorithms for ima
 
 For the purposes of this study we restrict to cases where the classifier is a single full connected layer (the raw class scores layer) as in such structures, based on theory, HiResCAM explanations faithfully reflect the model's decisions. 
 
-More specifically, in [1] and [2] one may find proof that for CNNs ending in GAP layer followed by a fully connected layer (the "CAM architecture" of Figure 1, e.g. ResNet, DenseNet etc), the visualizations produced by CAM, Grad-CAM, and HiResCAM XAI algorithms are identical. At the same time, in this architecture, as proved in [3], the CAM explanations are **guaranteed** to reflect the locations the model used for calculating the class score.
+More specifically, in [1] and [2] one may find proof that for CNNs ending in GAP layer followed by a fully connected layer (the "CAM architecture" of Figure 1, e.g. ResNet, DenseNet etc), the visualizations produced by CAM, Grad-CAM, and HiResCAM XAI algorithms are **identical**. In addition, as proved in [3], the CAM explanations are **guaranteed** to reflect the locations the model used for calculating the class score.
 
 <p align="center">
      <img src="https://user-images.githubusercontent.com/55101427/218502267-04f955ad-583f-471d-b9fe-8a6176f9918f.png" height="250" width="550" />
    </p>
 
-On the other hand, when the GAP layer is replaced by a Flatten layer (as per Figure 3) then one may find in [2] that the HiResCAM and Grad-CAM explanations are **no longer identical**. In this context, when calculating the gradients with respect to last convolutional layer then the HiResCAM explanation **provably** reflects the model's computations as it contributes directly to the raw class score calculation. At the same time, GradCAM fails to exhibit analogous behaviour. As explained in [2], GradCAM's gradient averaging step prevents a direct connection from the raw class scores while visually this results in often expanding the attention area to  bigger and smoother areas which are not faithful to the model's decisions.
+On the other hand, when the GAP layer is replaced by a Flatten layer (as per Figure 3) then one may find in [2] that the HiResCAM and Grad-CAM explanations are **no longer identical**. In this context, when calculating the gradients with respect to last convolutional layer then the HiResCAM explanation **provably** reflects the model's computations as it contributes directly to the raw class score calculation. At the same time, GradCAM fails to exhibit analogous behaviour. As explained in [2], GradCAM's gradient averaging step prevents a direct connection from the raw class scores, while visually this results in often expanding the attention area to  bigger and smoother areas which are not faithful to the model's decisions.
 
 <p align="center">
      <img src="https://user-images.githubusercontent.com/55101427/218503517-dbc6f754-d487-4382-a5b4-ab48ef9a6552.png" height="300" width="550" />
