@@ -1,4 +1,4 @@
-**Background & Motivation**
+## Background & Motivation
 
 We consider the gradient-based GradCAM[1] and HiResCAM[2] XAI algorithms for image data which were originally introduced as extentions of the well-known CAM[3] XAI algorithm. In general, they are both applicable to any CNN architecture with differentiable classifier part and can extract image explanations with respect to any convolutional block of the network. 
 
@@ -16,13 +16,13 @@ On the other hand, when the GAP layer is replaced by a Flatten layer (as per Fig
      <img src="https://user-images.githubusercontent.com/55101427/218503517-dbc6f754-d487-4382-a5b4-ab48ef9a6552.png" height="300" width="550" />
    </p>
 
-**Thesis topic**
+## Thesis topic
 
 The main focus of this thesis is to present **a quantitative comparison between GradCAM and HiResCAM explanations** in the context of "non-GAP" CNNs of Figure 3 and see if the theoretical advantage of HiResCAM aligns well with results of attribution map evaluation metrics such as AOPC[4], Max-Sensitivity[5] and HAAS[6].
 
 The experiments are conducted on medical image data with custom written variations of ReNet and VGG models.
 
-**Main Sources**
+## Main Sources
   - [1] GradCAM: https://arxiv.org/pdf/1610.02391.pdf
   - [2] HiResCAM: https://arxiv.org/pdf/2011.08891.pdf
   - [3] CAM: https://arxiv.org/pdf/1512.04150.pdf
