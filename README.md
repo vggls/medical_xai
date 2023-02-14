@@ -18,9 +18,9 @@ On the other hand, when the GAP layer is replaced by a Flatten layer (as per Fig
 
 ## Thesis topic
 
-The main focus of this thesis is to present **a quantitative comparison between GradCAM and HiResCAM explanations** in the context of "non-GAP" CNNs of Figure 3 and see if the theoretical advantage of HiResCAM aligns well with results of attribution map evaluation metrics such as AOPC[4], Max-Sensitivity[5] and HAAS[6].
+The main focus of this thesis is to present **a quantitative comparison between GradCAM and HiResCAM explanations** in the context of "non-GAP" CNNs of Figure 3 and see if the theoretical advantage of HiResCAM aligns well with results of attribution map evaluation metrics such as *AOPC* [4], *Max-Sensitivity* [5] and *HAAS* [6].
 
-The experiments are conducted on medical image data with custom written variations of ReNet and VGG models.
+The experiments are conducted on **medical image data** with custom written variations of ReNet and VGG models. An example case is presented in the 'example_xrays' folder of this repo.
 
 ## Main Sources
   - [1] GradCAM: https://arxiv.org/pdf/1610.02391.pdf
