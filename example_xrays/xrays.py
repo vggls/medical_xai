@@ -20,25 +20,15 @@ def create_datasets(train_transforms,
     
     datapath = './COVID-19_Radiography_Dataset/'
     
+    classes = [ 'COVID', 'Lung_Opacity', 'Normal', 'Viral Pneumonia']
+    
     # ----- create empty folders --------------------------------------------------------------
-    os.makedirs(datapath + 'training_dataset/COVID')
-    os.makedirs(datapath + 'training_dataset/Lung_Opacity')
-    os.makedirs(datapath + 'training_dataset/Normal')
-    os.makedirs(datapath + 'training_dataset/Viral Pneumonia')
-    
-    os.makedirs(datapath + 'validation_dataset/COVID')
-    os.makedirs(datapath + 'validation_dataset/Lung_Opacity')
-    os.makedirs(datapath + 'validation_dataset/Normal')
-    os.makedirs(datapath + 'validation_dataset/Viral Pneumonia')
-    
-    os.makedirs(datapath + 'test_dataset/COVID')
-    os.makedirs(datapath + 'test_dataset/Lung_Opacity')
-    os.makedirs(datapath + 'test_dataset/Normal')
-    os.makedirs(datapath + 'test_dataset/Viral Pneumonia')
+    for clas in classes:
+            os.makedirs(datapath + 'training_dataset/' + clas)
+            os.makedirs(datapath + 'validation_dataset/' + clas)
+            os.makedirs(datapath + 'test_dataset/' + clas)
     
     # ----- copy files to the folders ---------------------------------------------------------
-    classes = [ 'COVID', 'Lung_Opacity', 'Normal', 'Viral Pneumonia']
-
     for clas in classes:
     
         class_path = './COVID-19_Radiography_Dataset/{}/images'.format(clas)
