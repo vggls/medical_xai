@@ -58,11 +58,6 @@ def get_explanation(X, label, cam_instance):
 
 def get_exp_sens(X, label, expl, cam_instance, radius, iterations):
 
-    '''
-    Remark: If norm(expl) very small then max sensitivity will be inf as per below computation.
-            In the code we skip this kind of cases by returning None value.
-    '''
-
     X = X.cuda()
 
     max_diff = -math.inf
