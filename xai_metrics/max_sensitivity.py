@@ -3,6 +3,10 @@ Sources
     - Official Paper: https://arxiv.org/pdf/1901.09392.pdf
     - Official GitHub: https://github.com/chihkuanyeh/saliency_evaluation (link included in page 2 of the paper)
     
+Paper quote
+    "The sensitivity of an explanation measures the degree to which the explanation is affected by small perturbations from the test point.
+    It is natural to wish for our explanations to have low sensitivity."
+    
 Remark
     The methods of the 'Image level calculations' section are taken from the 'infid_sen_utils.py' file of the authors' 
     aforementioned GitHub page and adjusted accordingly to pytorch_grad_cam class instances.
@@ -73,7 +77,7 @@ def get_exp_sens(X, label, expl, cam_instance, radius, iterations):
 
         expl_eps = get_explanation(X_noisy, label, cam_instance)
 
-        #max_diff = max(max_diff, np.linalg.norm(expl-expl_eps)/norm)  # by default this is the Frobenius norm
+        #max_diff = max(max_diff, np.linalg.norm(expl-expl_eps)/norm)
         # we consider the explanations difference because we want to see how much the CLASS attribution map changes
         max_diff = max(max_diff, np.linalg.norm(expl-expl_eps))
         
