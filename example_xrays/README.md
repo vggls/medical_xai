@@ -1,4 +1,4 @@
-## Summary
+## Short summary
 
 In this use case we consider X-Ray images taken from the well-known [Covid-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database). For a trained ResNet34 variant (no GAP layer) we generate the GradCAM and HiResCAM test set attribution maps and compare their quality in terms of the AOPC and Max Sensitivity metrics.
 
