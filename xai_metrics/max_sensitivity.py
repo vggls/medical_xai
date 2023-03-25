@@ -72,8 +72,7 @@ def get_exp_sens(X, label, expl, cam_instance, radius, iterations):
 
         sample = torch.FloatTensor(sample_eps_Inf(X.cpu().numpy(), radius)).cuda()
 
-        X_noisy = X + sample #Here values might go beyond [-1,1]. 
-                             #Corresponds to 'y' of the paper. It is a point in the Ball(center=X, radius=radius)
+        X_noisy = X + sample #Corresponds to 'y' of the paper. It is a point in the Ball(center=X, radius=radius)
 
         expl_eps = get_explanation(X_noisy, label, cam_instance)
 
