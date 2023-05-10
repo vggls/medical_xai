@@ -14,7 +14,7 @@ four medical image datasets.
 to a model if the sum of the attribution map values reflect the class score calculation.
 Based on theory included in [2], when the CNN architecture is of the form ***Conv - Flatten - Class Scores*** and the XAI algorithm class
 gradients are computed with respect to the last convolutional layer of the network, then
-one can prove that HiResCAM is faithful to the model 
+one can prove that HiResCAM is faithful to the model ([2] section 3.5.1).
 On the other hand, Grad-CAM’s attribution maps do not exhibit analogous behaviour.
 This fact means that HiResCAM attribution maps faithfully highlight the locations the
 model identifies the class.
