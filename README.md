@@ -1,16 +1,23 @@
-## Background & Motivation
+## Abstract
+In this study we utilize the Grad-CAM [1] and HiResCAM [2] attribution map methods and
+consider a setting where the HiResCAM algorithm provably produces faithful explanations
+while Grad-CAM does not. This theoretical result motivates us to investigate the
+quality of their attribution maps in terms of quantitative evaluation metrics and examine
+if faithfulness aligns with the metrics results. Our evaluation scheme implements
+the well-established AOPC [3] and Max-Sensitivity [4] scores along with the recently introduced
+HAAS [5] score and utilizes ResNet and VGG pre-trained architectures trained on
+four medical image datasets.
 
-We consider the gradient-based GradCAM[1] and HiResCAM[2] XAI algorithms for image data which were originally introduced as extentions of the well-known CAM[3] XAI algorithm. In general, they are both applicable to any CNN architecture with differentiable classifier part and can extract image explanations with respect to any convolutional block of the network. 
+## Background & Motivation (short version)
 
-For the purposes of this study we restrict to cases where the classifier is a single full connected layer (the raw class scores layer) as in such structures, based on theory, HiResCAM explanations faithfully reflect the model's decisions. 
-
-More specifically, in [1] and [2] one may find proof that for CNNs ending in GAP layer followed by a fully connected layer (the "CAM architecture" of Figure 1, e.g. ResNet, DenseNet etc), the visualizations produced by CAM, Grad-CAM, and HiResCAM XAI algorithms are **identical**. In addition, as proved in [3], the CAM explanations are **guaranteed** to reflect the locations the model used for calculating the class score.
-
-<p align="center">
-     <img src="https://user-images.githubusercontent.com/55101427/218502267-04f955ad-583f-471d-b9fe-8a6176f9918f.png" height="250" width="550" />
-   </p>
-
-On the other hand, when the GAP layer is replaced by a Flatten layer (as per Figure 3) then one may find in [2] that the HiResCAM and Grad-CAM explanations are **no longer identical**. In this context, when calculating the gradients with respect to last convolutional layer then the HiResCAM explanation **provably** reflects the model's computations as it contributes directly to the raw class score calculation. At the same time, GradCAM fails to exhibit analogous behaviour. As explained in [2], GradCAM's gradient averaging step prevents a direct connection from the raw class scores, while visually this results in often expanding the attention area to  bigger and smoother areas which are not faithful to the model's decisions.
+***For the purposes of this study***, an attribution map method will be considered ***faithful***
+to a model if the sum of the attribution map values reflect the class score calculation.
+Based on theory included in [2], when the CNN architecture is of the form ***Conv - Flatten - Class Scores*** and the XAI algorithm class
+gradients are computed with respect to the last convolutional layer of the network, then
+one can prove that HiResCAM is faithful to the model 
+On the other hand, Grad-CAM’s attribution maps do not exhibit analogous behaviour.
+This fact means that HiResCAM attribution maps faithfully highlight the locations the
+model identifies the class.
 
 <p align="center">
      <img src="https://user-images.githubusercontent.com/55101427/218503517-dbc6f754-d487-4382-a5b4-ab48ef9a6552.png" height="300" width="550" />
@@ -18,14 +25,15 @@ On the other hand, when the GAP layer is replaced by a Flatten layer (as per Fig
 
 ## Thesis topic
 
-The main focus of this thesis is to present **a quantitative comparison between GradCAM and HiResCAM explanations** in the context of "non-GAP" CNNs of Figure 3 and see if the theoretical advantage of HiResCAM aligns well with results of attribution map evaluation metrics such as *AOPC* [4], *Max-Sensitivity* [5] and *HAAS* [6].
+Motivated from this theoretical result, we want to quantify the quality of the Grad-CAM
+and HiResCAM attribution maps in the above setting and examine if the AOPC, Max-
+Sensitivity and HAAS metrics favour the HiResCAM attribution map.
 
-The experiments are conducted on **medical image data** with custom written variations of ReNet and VGG models. An example case is presented in the 'example_xrays' folder of this repo.
+An example case is presented in the ***example_xrays*** folder of this repo, for the [Covid-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database).
 
 ## Main Sources
   - [1] GradCAM: https://arxiv.org/pdf/1610.02391.pdf
   - [2] HiResCAM: https://arxiv.org/pdf/2011.08891.pdf
-  - [3] CAM: https://arxiv.org/pdf/1512.04150.pdf
-  - [4] AOPC: https://arxiv.org/pdf/1509.06321.pdf
-  - [5] Max Sensitivity: https://arxiv.org/pdf/1901.09392.pdf
-  - [6] HAAS: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759
+  - [3] AOPC: https://arxiv.org/pdf/1509.06321.pdf
+  - [4] Max Sensitivity: https://arxiv.org/pdf/1901.09392.pdf
+  - [5] HAAS: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759
