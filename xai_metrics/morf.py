@@ -18,8 +18,6 @@ from heatmap import Heatmap
 
 class MoRF():
 
-  # Rmk: tensor side should be resized to a multiplier of 8 (ex 64, 128, 256) to align with heatmaps.py region_size calculations
-
   def __init__(self, tensor, heatmap_regions, model):
 
       self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
