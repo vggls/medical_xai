@@ -1,3 +1,6 @@
+## Title
+**Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics**
+
 ## Abstract
 In this study we utilize the Grad-CAM [1] and HiResCAM [2] attribution map methods and
 consider a setting where the HiResCAM algorithm provably produces faithful explanations
@@ -27,9 +30,7 @@ model identifies the class.
 
 Motivated from this theoretical result, we want to quantify the quality of the Grad-CAM
 and HiResCAM attribution maps in the above setting and examine if the AOPC, Max-
-Sensitivity and HAAS metrics favour the HiResCAM attribution map.
-
-An example case is presented in the ***example_xrays*** folder of this repo, for the [Covid-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database).
+Sensitivity and HAAS metrics can distinguish between the faithful and non-faithful attribution maps.
 
 ## Main Sources
   - [1] GradCAM: https://arxiv.org/pdf/1610.02391.pdf
