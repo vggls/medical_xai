@@ -1,8 +1,8 @@
 ## Short summary
 
-In this use case we consider X-Ray images taken from the well-known [Covid-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database). For a trained ResNet34 variant (no GAP layer) we generate the GradCAM and HiResCAM test set attribution maps and compare their quality in terms of the AOPC and Max Sensitivity metrics.
+In this use case we consider X-Ray images taken from the well-known [Covid-19 Radiography Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database). For a trained ResNet34 variant (no GAP layer) we generate the GradCAM and HiResCAM test set attribution maps and compare their quality in terms of the AOPC, Max Sensitivity and HAAS metrics.
 
-We observe that HiResCAM outperforms GradCAM in both metrics.
+We observe that HiResCAM outperforms GradCAM in both metrics. On the other hand, HAAS yields value below 1 and does not contribute to our comparison.
 
 ## ResNet34 Testing Results
 
@@ -30,3 +30,8 @@ We observe that HiResCAM outperforms GradCAM in both metrics.
    <img src="https://user-images.githubusercontent.com/55101427/216672311-efaaafcd-3d66-477c-abf2-60daac8adc71.png" height="250" width="500" />
    <img src="https://user-images.githubusercontent.com/55101427/216672591-34bcfc7f-71a9-4abb-ba16-d53710eeb6ee.png" height="250" width="500" />
  </p>
+ 
+ ## HAAS Results
+ <p float="left">
+     <img src="https://github.com/vggls/M.Sc._AI_Thesis/assets/55101427/50480947-4f2a-44ba-87d9-c1c0381f51e8" height="200" width="230" />
+   </p>
