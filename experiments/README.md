@@ -9,7 +9,7 @@ In our experiments we used pre-trained ResNet34, ResNet50 and VGG19 architecture
 All networks were customized to the *Conv - Flatten - Class Scores* structure (as per code in *models* folder)
 such that HiResCAM has faithful behaviour when calculated with respect to the last convolutional layer. 
 
-We note that in the provided experiment code files, the metrics are calculated by loading the learned models from a local storage unit.
+In the provided experiment code files, the metrics are calculated by loading the learned models from a local storage unit.
 For the purposes of this repository we provide all learned models in the following link: [click](https://drive.google.com/drive/folders/1C3HEjan2q0ylDVwS3lMxgtwxLJXnxGZh?usp=sharing) .
 
 Thus, in order to run the experiments, one should adjust code accordingly.
