@@ -5,7 +5,7 @@
 <!--- - [HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000) -->
 
 ## Models
-For the purposes of our experiments we used pre-trained ResNet34, ResNet50 and VGG19 architectures. 
+In our experiments we used pre-trained ResNet34, ResNet50 and VGG19 architectures. Here we present two experiments.
 All networks were customized to the *Conv - Flatten - Class Scores* structure (as per code in *models* folder)
 such that HiResCAM has faithful behaviour when calculated with respect to the last convolutional layer. 
 
