@@ -10,6 +10,6 @@ All networks were customized to the *Conv - Flatten - Class Scores* structure (a
 such that HiResCAM has faithful behaviour when calculated with respect to the last convolutional layer. 
 
 In the provided experiment code files, the metrics are calculated by loading the learned models from a local storage unit.
-For the purposes of this repository we provide all learned models in the following link: [click](https://drive.google.com/drive/folders/1C3HEjan2q0ylDVwS3lMxgtwxLJXnxGZh?usp=sharing) .
+For the purposes of this repository we provide all learned models in the following [link](https://drive.google.com/drive/folders/1C3HEjan2q0ylDVwS3lMxgtwxLJXnxGZh?usp=sharing) .
 
 Thus, in order to run the experiments, one should amend code accordingly.
