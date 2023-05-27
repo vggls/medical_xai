@@ -10,5 +10,6 @@ VGG19 architectures. All networks were customized to the *Conv - Flatten - Class
 structure such that HiResCAM has faithful behaviour when calculated
 with respect to the last convolutional layer. 
 
-One may refer to *models* folder to access models of the aforementioned structure and *learned_weights* folder to 
-access the learned weights.
+We note that in the provided experiment code files, the metrics are calculated by loading the entire learned models from a local storage unit.
+For the purposes of this repository we provide all model learned weights instead of the entire model.
+Thus, in order to run the experiments, one should adjust the learned weights (*learned_weights* folder) to the provided model architectures (*models* folder) instead.
