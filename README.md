@@ -33,8 +33,8 @@ and HiResCAM attribution maps in the above setting and examine if the AOPC, Max-
 Sensitivity and HAAS metrics can distinguish between the faithful and non-faithful attribution maps.
 
 ## Main Sources
-  - [1] GradCAM: https://arxiv.org/pdf/1610.02391.pdf
-  - [2] HiResCAM: https://arxiv.org/pdf/2011.08891.pdf
-  - [3] AOPC: https://arxiv.org/pdf/1509.06321.pdf
-  - [4] Max Sensitivity: https://arxiv.org/pdf/1901.09392.pdf
-  - [5] HAAS: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759
+  - [1] [GradCAM](https://arxiv.org/pdf/1610.02391.pdf)
+  - [2] [HiResCAM](https://arxiv.org/pdf/2011.08891.pdf)
+  - [3] [AOPC](https://arxiv.org/pdf/1509.06321.pdf)
+  - [4] [Max Sensitivity](https://arxiv.org/pdf/1901.09392.pdf)
+  - [5] [HAAS](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759)
