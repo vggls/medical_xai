@@ -13,7 +13,7 @@ four medical image datasets.
 
 ## Background & Motivation (short version)
 
-***For the purposes of this study***, an attribution map method will be considered ***faithful***
+***For the purposes of this study*** (following [2]), an attribution map method will be considered ***faithful***
 to a model if the sum of the attribution map values reflect the class score calculation.
 Based on theory included in [2], when the CNN architecture is of the form ***Conv - Flatten - Class Scores*** and the XAI algorithm class
 gradients are computed with respect to the last convolutional layer of the network, then
