@@ -3,9 +3,9 @@
 In this use case we consider breast tissue images taken from the [BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis) dataset. For a trained ResNet50 variant (no GAP layer) we generate the GradCAM and HiResCAM test set attribution maps and compare their quality in terms of the AOPC, Max Sensitivity and HAAS metrics.
 
 We observe that
-- wrt AOPC HiResCAM outperforms GradCAM on average wrt heatmap the size
-- wrt Max Sensitivity HiResCAM outperforms GradCAM over all radii tested (and consequently on average as well)
-- HAAS yields value below 1 in both cases and does not contribute to our comparison
+- AOPC: HiResCAM outperforms GradCAM on average wrt heatmap the size
+- Max Sensitivity: HiResCAM outperforms GradCAM over all radii tested (and consequently on average as well)
+- HAAS: value below 1 in both cases and as a result does not contribute to our comparison
 
 ## ResNet50 Testing Results
 
