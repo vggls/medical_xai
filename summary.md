@@ -15,7 +15,7 @@ then one can prove that HiResCAM is faithful to the model and the produced attri
 highlight the pixel locations the model identifies the class. 
 On the other hand, Grad-CAM’s attribution maps do not exhibit analogous behaviour.
 
-\noindent This theoretical result motivates us to investigate the
+This theoretical result motivates us to investigate the
 quality of their attribution maps in terms of quantitative evaluation metrics 
 and examine if faithfulness aligns with the metrics results. Our evaluation 
 scheme implements the well-established AOPC and Max-Sensitivity scores along 
@@ -23,7 +23,7 @@ with the recently introduced HAAS score and utilizes ResNet and VGG pre-trained
 architectures trained on four well-known medical image datasets; 
 CRC, COVID-19 Radiography Database, HAM10000 and BreakHis.
 
-\noindent The experimental results suggest that Max-Sensitivity and
+The experimental results suggest that Max-Sensitivity and
 AOPC favour the HiResCAM faithful attribution maps over the non-faithful Grad-CAM attribution maps. 
 This is attributed to the fact that HiResCAM fully exploits the gradients in terms of values and sign, 
 producing  high resolution HiResCAM attribution maps which provide a more precise class localization. 
