@@ -47,7 +47,7 @@ compelling ground for hosting a meaningful comparison between Grad-CAM and HiRes
 
 ***Max Sensitivity***
 <p align="left">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/137c00ab-40bc-468f-9afc-d0d9bfa749cc.png" height="600" width="500" />
+     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/137c00ab-40bc-468f-9afc-d0d9bfa749cc.png" height="550" width="500" />
    </p>
 
 ***HAAS***
