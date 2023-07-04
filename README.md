@@ -9,7 +9,8 @@ quality of their attribution maps in terms of quantitative evaluation metrics an
 if faithfulness aligns with the metrics results. Our evaluation scheme implements
 the well-established AOPC [4] and Max-Sensitivity [5] scores along with the recently introduced
 HAAS [6] score and utilizes ResNet and VGG pre-trained architectures trained on
-four medical image datasets. The experimental results suggest that Max-Sensitivity and
+the CRC, Covid-19 Database, HAM10000 and BreakHis medical image datasets. 
+The experimental results suggest that Max-Sensitivity and
 AOPC favour faithfulness. On the other hand, HAAS does not contribute meaningful
 values to our comparison, but rather inspires further study about its nature.
 
