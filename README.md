@@ -26,14 +26,10 @@ Based on results included in [1], [2] and [3], the following table summarizes th
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/bf7d6db1-571e-4308-987a-3e3c59112b6b.png" height="160" width="500" />
    </p>
 
-The combination of non-equivalent values and the faithfulness of HiResCAM turns the setup of *Conv - Flatten - Class Scores* structures (as per Figure 3 below), 
+The combination of non-equivalent values and the faithfulness of HiResCAM turns the setup of *Conv - Flatten - Class Scores* structures, 
 with gradients calculated at the last convolutional layer, into a *unique setup reference* where the algorithms can be distinguished. 
 In the remaining setups, both algorithms are either equivalent or non-faithful. Consequently, this particular setup serves as a 
 compelling ground for hosting a meaningful comparison between Grad-CAM and HiResCAM.
-
-<p align="center">
-     <img src="https://user-images.githubusercontent.com/55101427/218503517-dbc6f754-d487-4382-a5b4-ab48ef9a6552.png" height="270" width="500" />
-   </p>
 
 ## Workflow
 <p align="center">
