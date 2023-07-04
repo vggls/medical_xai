@@ -36,7 +36,7 @@ compelling ground for hosting a meaningful comparison between Grad-CAM and HiRes
 
 ## Workflow
 <p align="center">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/5df15629-7fb4-4089-a6e0-3dce4cf3a83c.png" height="250" width="600" />
+     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/5df15629-7fb4-4089-a6e0-3dce4cf3a83c.png" height="210" width="500" />
    </p>
 
 ## Experimental results 
