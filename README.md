@@ -47,12 +47,12 @@ compelling ground for hosting a meaningful comparison between Grad-CAM and HiRes
 
 ***Max Sensitivity***
 <p align="left">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/137c00ab-40bc-468f-9afc-d0d9bfa749cc.png" height="550" width="500" />
+     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/137c00ab-40bc-468f-9afc-d0d9bfa749cc.png" height="500" width="450" />
    </p>
 
 ***HAAS***
 <p align="left">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/fd22ced2-4f7d-4566-b2e5-d1fc7ebb787a.png" height="90" width="400" />
+     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/fd22ced2-4f7d-4566-b2e5-d1fc7ebb787a.png" height="80" width="400" />
    </p>
 
 An analysis of the results is provided in chapter 5 of the accompanying thesis link.
