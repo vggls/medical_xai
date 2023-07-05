@@ -55,7 +55,7 @@ compelling ground for hosting a meaningful comparison between Grad-CAM and HiRes
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/fd22ced2-4f7d-4566-b2e5-d1fc7ebb787a.png" height="80" width="400" />
    </p>
 
-An analysis of the results is provided in chapter 5 of the accompanying thesis link.
+An analysis of the results is provided in chapter 5 ("Discussion") of the accompanying thesis link.
 
 ## Main Sources
   - [1] [CAM](https://arxiv.org/pdf/1512.04150.pdf)
