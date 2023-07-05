@@ -42,7 +42,7 @@ compelling ground for hosting a meaningful comparison between Grad-CAM and HiRes
 ## Experimental results 
 ***AOPC***
 <p align="left">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/b963cba9-6d86-488e-ab17-0333035fdb73.png" height="220" width="500" />
+     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/b963cba9-6d86-488e-ab17-0333035fdb73.png" height="200" width="500" />
    </p>
 
 ***Max Sensitivity***
