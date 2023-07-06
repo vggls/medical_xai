@@ -1,5 +1,5 @@
 """
-Code that converts [-1,1]-values tensor to [0,1]-values tensor.
+Code that converts [-1,1]-pixel valued tensor to [0,1]-pixel valued tensor.
 
 [-1,1]-value tensors arise from transforms of the form:
    'transforms.Normalize(torch.Tensor([0.5, 0.5, 0.5]), torch.Tensor([0.5, 0.5, 0.5])'
