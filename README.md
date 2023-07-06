@@ -19,7 +19,7 @@ values to our comparison, but rather inspires further study about its nature.
 
 Source: [Thesis link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)
 
-## Background & Motivation (short version)
+## Background
 
 Adopting the terminology of [3], an attribution map method will be considered ***faithful***
 to a model if the sum of the attribution map values reflects the class score calculation, up to a class-dependent bias term deviation.
