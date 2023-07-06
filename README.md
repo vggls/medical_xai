@@ -42,7 +42,7 @@ As a result, the workflow of our study is summarized as follows:
    </p>
 
 ## Experimental results 
-***AOPC***
+***- AOPC***
 
 In our experiments, we produce 224\*224 pixel Grad-CAM and HiResCAM attribution maps, which are perturbed by regions of size 56\*56, 28\*28, 21\*21 and 16\*16, resulting in heatmaps of size 4\*4, 8\*8, 11\*11 and 14\*14 respectively. In addition, per perturbation step, we replace the image pixels with re-sampled uniform noise. We note that large AOPC values suggest heatmaps of better quality.
 
@@ -50,7 +50,7 @@ In our experiments, we produce 224\*224 pixel Grad-CAM and HiResCAM attribution 
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/b963cba9-6d86-488e-ab17-0333035fdb73.png" height="200" width="500" />
    </p>
 
-***Max Sensitivity***
+***- Max Sensitivity***
 
 We calculated the metric for different levels r of increasing uniform noise perturbations and varied the number of perturbed instances y as follows: for r=0.05 and r=0.1 we drew y=20 samples, for r=0.2 and r=0.3 we drew y=30 samples and for r=0.4 and r=0.5 we drew y=40 samples. We note that low Max-Sensitivity values suggest heatmaps of better quality.
 
@@ -58,7 +58,7 @@ We calculated the metric for different levels r of increasing uniform noise pert
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/137c00ab-40bc-468f-9afc-d0d9bfa749cc.png" height="450" width="450" />
    </p>
 
-***HAAS***
+***- HAAS***
 
 The HAAS score is free of hyper-parameters. We note that when HAAS is greater than 1, the attribution maps explain the features' importance well. On the other hand, if HAAS is less than 1, the attribution maps fail to bring out the features' importance for the model.
 
