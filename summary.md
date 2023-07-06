@@ -26,8 +26,8 @@ CRC, COVID-19 Radiography Database, HAM10000 and BreakHis.
 The experimental results suggest that Max-Sensitivity and
 AOPC favour the HiResCAM faithful attribution maps over the non-faithful Grad-CAM attribution maps. 
 This is attributed to the fact that HiResCAM fully exploits the gradients in terms of values and sign, 
-producing  high resolution HiResCAM attribution maps which provide a more precise class localization. 
+producing high resolution HiResCAM attribution maps which provide a more precise class localization. 
 On the other hand, HAAS did not contribute meaningful values to our comparison, as in almost all experiments 
-yielded that the attribution maps are inaccurate, regardless of dataset, model and attribution method. 
-This fueled further study about its nature and led us to investigate its relation with class features 
-such as the shape, the colour and the pattern distribution.
+suggested that the attribution maps are inaccurate, regardless of dataset, model and attribution method. 
+This fueled further study and led us to investigate its relation with characteristics such as
+the nature of the class object and the class colour.
