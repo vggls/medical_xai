@@ -1,7 +1,9 @@
 ## Title
-**Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics**
+(pedning)
 
 ## Abstract
+(pedning)
+<!--
 In this study we utilize the Grad-CAM[2] and HiResCAM[3] attribution map methods and
 consider a setting where the HiResCAM algorithm provably produces faithful explanations
 while Grad-CAM does not. This theoretical result motivates us to investigate the
@@ -18,13 +20,14 @@ AOPC favour faithfulness. On the other hand, HAAS does not contribute meaningful
 values to our comparison, but rather inspires further study about its nature.
 
 Source: [Thesis link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)
+-->
 
 ## Background
 
 Adopting the terminology of [3], an attribution map method will be considered ***faithful***
 to a model if the sum of the attribution map values reflects the class score calculation, up to a class-dependent bias term deviation.
 
-Based on results included in [1], [2] and [3], the following table summarizes the relationship between Grad-CAM and HiResCAM in terms of values and faithfulness.
+Based on results included in [1], [2] and [3], we summarize in the following table the relationship between Grad-CAM and HiResCAM in terms of values and faithfulness.
 <p align="center">
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/3db620a3-032b-43d8-a155-57dda47047c0.png" height="140" width="500" />
    </p>
@@ -67,7 +70,7 @@ The HAAS score is free of hyper-parameters. We note that when HAAS is greater th
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/9d78612f-8fab-41b6-8bb8-0e5e3e5fc842.png" height="90" width="470" />
    </p>
 
-An analysis of the results is provided in chapter 5 ("Discussion") of the thesis link provided in the Abstract.
+<!--An analysis of the results is provided in chapter 5 ("Discussion") of the thesis link provided in the Abstract.-->
 
 ## Main Sources
   - [1] [CAM](https://arxiv.org/pdf/1512.04150.pdf)
