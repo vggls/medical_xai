@@ -1,8 +1,22 @@
 ## Title
-(pedning)
+(pending)
 
-## Abstract
-(pedning)
+## Intro
+This repository contains the source code of the experiments conducted in (to be added).
+
+We address the problem of quantifying the quality of attribution maps in a setting where HiResCAM produces *faithful* attributions while Grad-CAM does not.
+Our evaluation scheme implements
+the well-established AOPC[4] and Max Sensitivity[5] scores along with the recently introduced
+HAAS[6] score and utilizes ResNet and VGG pre-trained architectures trained on
+the [CRC](https://zenodo.org/record/1214456), 
+[Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database), 
+[HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000) 
+and [BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis) medical image datasets. 
+Our findings (see below) suggest that Max-Sensitivity and AOPC results align with the faithful attribution maps.
+On the other hand, the HAAS score does not contribute to our comparison as it evaluates almost all attribution maps as inaccurate. 
+This fueled further study about the nature of HA images and led us to investigate their relation with class features 
+which could potentially vary between medical and non-medical datasets.
+
 <!--
 In this study we utilize the Grad-CAM[2] and HiResCAM[3] attribution map methods and
 consider a setting where the HiResCAM algorithm provably produces faithful explanations
