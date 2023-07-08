@@ -1,8 +1,8 @@
 ## Title
-(pending)
+Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics
 
 ## Intro
-This repository contains the source code of the experiments conducted in (to be added).
+This repository contains the source code of the experiments conducted in (paper name to be added).
 
 We address the problem of quantifying the quality of attribution maps in a setting where HiResCAM produces *faithful* attributions while Grad-CAM does not.
 Our evaluation scheme implements
