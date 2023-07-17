@@ -66,7 +66,7 @@ The HAAS score is free of hyper-parameters. We note that when HAAS is greater th
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/9d78612f-8fab-41b6-8bb8-0e5e3e5fc842.png" height="90" width="470" />
    </p>
 
-<!--An analysis of the results is provided in chapter 5 ("Discussion") of the thesis link provided in the Abstract.-->
+An analysis of the results is provided in section 5 ("Discussion") of the link provided in the "1. Intro".
 
 #### Main References
 
