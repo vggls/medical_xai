@@ -1,6 +1,5 @@
 """
-Sources
-    - Paper : https://arxiv.org/pdf/1509.06321.pdf 
+Sources: https://arxiv.org/pdf/1509.06321.pdf 
 """
 
 import numpy as np
