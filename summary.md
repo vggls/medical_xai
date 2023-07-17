@@ -29,5 +29,5 @@ This is attributed to the fact that HiResCAM fully exploits the gradients in ter
 producing high resolution HiResCAM attribution maps which provide a more precise class localization. 
 On the other hand, HAAS did not contribute meaningful values to our comparison, as in almost all experiments 
 suggested that the attribution maps are inaccurate, regardless of dataset, model and attribution method. 
-This fueled further study and led us to investigate its relation with characteristics such as
-the nature of the class object and the class colour.
+This inspires further study and led us to investigate its relation with characteristics such as
+the class pattern distribution and the class colour.
