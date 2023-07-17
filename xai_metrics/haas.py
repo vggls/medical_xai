@@ -1,6 +1,5 @@
 """
-Source 
-    - Paper: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759
+Source: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759
 """
 
 import numpy as np
