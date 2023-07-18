@@ -15,7 +15,7 @@ the [CRC](https://zenodo.org/record/1214456),
 and [BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis) medical image datasets. 
 Our findings (see below) suggest that Max-Sensitivity and AOPC results align with the faithful attribution maps.
 On the other hand, the HAAS score does not contribute to our comparison as it evaluates almost all attribution maps as inaccurate. 
-This fueled further study about the nature of HA images and led us to investigate their relation with class features 
+This inspires further study about the nature of HA images and led us to investigate their relation with class features 
 which could potentially vary between medical and non-medical datasets.
 
 ### 2. Background
