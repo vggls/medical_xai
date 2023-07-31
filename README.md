@@ -91,13 +91,16 @@ in the context of the positive Grad-CAM and HiResCAM attributions, we are intere
 locating a learned pattern. Some examples of this scenario are included in the following image.
 
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/d744776e-a534-468a-8df9-0f2583229b1b.png" height="120" width="500" />
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/b6187c1c-5928-4ce9-836b-87e7d1c86c46.png" height="120" width="500" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/d744776e-a534-468a-8df9-0f2583229b1b.png" height="170" width="670" />
    </p>
-
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/b4552306-0605-4120-a474-bccb47074ff9.png" height="120" width="500" />
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/cf84ad84-6b11-4561-83eb-d32bca01027d.png" height="120" width="500" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/b6187c1c-5928-4ce9-836b-87e7d1c86c46.png" height="170" width="670" />
+   </p>
+<p align="center">
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/b4552306-0605-4120-a474-bccb47074ff9.png" height="160" width="670" />
+   </p>
+<p align="center">
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/cf84ad84-6b11-4561-83eb-d32bca01027d.png" height="170" width="670" />
    </p>
 
 We conduct the following experiment to further explore the relationship between HAAS and the medical data of this study: For Cifar10, STL10 and Imagenette we train a loop of 16 VGG19 models, configured over a variety of training batch size, learning rate, scheduler and weight decay (see in the text for more details), in order to track the HiResCAM HAAS scores range. 
