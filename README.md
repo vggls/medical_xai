@@ -74,8 +74,8 @@ Grad-CAM calculates Gradient Averages to assign weights to the feature maps. On 
 As a result, HiResCAM generates fine-grained high resolution attribution maps, while Grad-CAM produces maps characterized by larger and smoother areas of interest because of the Gradient Averaging effect. This becomes evident in the following examples.
 
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/5f520ba6-369a-491a-82cc-572210a7c511.png" height="340" width="420" />
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/06622816-4bee-4c4b-921b-3aa2dab1d272.png" height="340" width="420" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/5f520ba6-369a-491a-82cc-572210a7c511.png" height="300" width="390" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/06622816-4bee-4c4b-921b-3aa2dab1d272.png" height="300" width="390" />
    </p>
 
 Thus, the HiResCAM attribution maps provide more precise localization of the most discriminative regions, leading eventually to higher AOPC scores. Similarly, considering the Max-Sensitivity results, the high resolution HiResCAM maps develop a resilient behaviour to small perturbations in the input image.
@@ -91,16 +91,12 @@ in the context of the positive Grad-CAM and HiResCAM attributions, we are intere
 locating a learned pattern. Some examples of this scenario are included in the following image.
 
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/d744776e-a534-468a-8df9-0f2583229b1b.png" height="170" width="670" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/d744776e-a534-468a-8df9-0f2583229b1b.png" height="120" width="500" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/b6187c1c-5928-4ce9-836b-87e7d1c86c46.png" height="120" width="500" />
    </p>
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/b6187c1c-5928-4ce9-836b-87e7d1c86c46.png" height="170" width="670" />
-   </p>
-<p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/b4552306-0605-4120-a474-bccb47074ff9.png" height="160" width="670" />
-   </p>
-<p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/cf84ad84-6b11-4561-83eb-d32bca01027d.png" height="170" width="670" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/b4552306-0605-4120-a474-bccb47074ff9.png" height="120" width="500" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/cf84ad84-6b11-4561-83eb-d32bca01027d.png" height="120" width="500" />
    </p>
 
 We conduct the following experiment to further explore the relationship between HAAS and the medical data of this study: For Cifar10, STL10 and Imagenette we train a loop of 16 VGG19 models, configured over a variety of training batch size, learning rate, scheduler and weight decay (see in the text for more details), in order to track the HiResCAM HAAS scores range. 
