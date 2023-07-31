@@ -112,7 +112,7 @@ Per dataset, the pool of models yields maximum HAAS score above 1 for a highly p
 Hence, it was possible to derive meaningful HAAS scores when utilizing the non-medical datasets and models that were not optimally trained.
 This stands in contrast with the medical data experimets which were built on models that underwent meticulous training and suggests evidence that HAAS might be more sensitive to medical data.
 
-#### Main References
+#### ----- Main References -----
 
 - [1] [CAM](https://arxiv.org/pdf/1512.04150.pdf)
 - [2] [GradCAM](https://arxiv.org/pdf/1610.02391.pdf)
