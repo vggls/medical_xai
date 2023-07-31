@@ -73,9 +73,9 @@ A notable distinction between HiResCAM and Grad-CAM lies in the treatment of gra
 Grad-CAM calculates Gradient Averages to assign weights to the feature maps. On the other hand, HiResCAM uses the Hadamard product to weigh each feature map pixel with its corresponding gradient, preserving in that way the gradient's value-and-sign influence on a pixel level.
 As a result, HiResCAM generates fine-grained high resolution attribution maps, while Grad-CAM produces maps characterized by larger and smoother areas of interest because of the Gradient Averaging effect. This becomes evident in the following examples.
 
-<p float="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/5f520ba6-369a-491a-82cc-572210a7c511.png" height="340" width="430" />
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/06622816-4bee-4c4b-921b-3aa2dab1d272.png" height="340" width="430" />
+<p align="center">
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/5f520ba6-369a-491a-82cc-572210a7c511.png" height="340" width="420" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/06622816-4bee-4c4b-921b-3aa2dab1d272.png" height="340" width="420" />
    </p>
 
 Thus, the HiResCAM attribution maps provide more precise localization of the most discriminative regions, leading eventually to higher AOPC scores. Similarly, considering the Max-Sensitivity results, the high resolution HiResCAM maps develop a resilient behaviour to small perturbations in the input image.
