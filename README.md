@@ -70,8 +70,8 @@ The HAAS score is free of hyper-parameters. We note that when HAAS is greater th
 As per section 4, we observe that AOPC favors HiResCAM over Grad-CAM in 7/8 model experiments and Max Sensitivity in 8/8 model experiments. We discuss their results together since the analysis is rooted in the same reasoning.
 
 A notable distinction between HiResCAM and Grad-CAM lies in the treatment of gradients. 
-Grad-CAM calculates Gradient Averages to assign weights to the feature maps. On the other hand, HiResCAM uses the Hadamard product to weigh each feature map pixel with its corresponding gradient, preserving in that way the gradient's value-and-sign influence on a pixel level.
-As a result, HiResCAM generates fine-grained high resolution attribution maps, while Grad-CAM produces maps characterized by larger and smoother areas of interest because of the Gradient Averaging effect. This becomes evident in the following examples.
+Grad-CAM calculates Gradient Averages to assign weights to the feature maps. On the other hand, HiResCAM uses the Hadamard product to weight each feature map pixel with its corresponding gradient, preserving in that way the gradient's value-and-sign influence on a pixel level.
+Consequently, as explained in [3], HiResCAM generates fine-grained high resolution attribution maps, while Grad-CAM produces maps characterized by larger and smoother areas of interest because of the Gradient Averaging effect. This becomes evident in the following examples.
 
 <p align="center">
      <img src="https://github.com/vggls/medical_xai/assets/55101427/5f520ba6-369a-491a-82cc-572210a7c511.png" height="300" width="390" />
@@ -86,7 +86,7 @@ As per section 4, in 15/16 cases we calculated a HAAS score below 1, implying th
 
 Are these results related to the nature of medical images? 
 
-HAAS in [6] was tested on datasets whose classes are determined by single objects and are not sensitive to subtle color variations (Cifar10, STL10, ImageNet). On the other hand, medical images are more complex; the classes could have many attention areas and a stronger colour dependency. As a result,
+HAAS in [6] was tested on datasets whose classes are determined by single objects and are not sensitive to subtle colour variations (Cifar10, STL10, ImageNet). On the other hand, medical images are more complex; the classes could have many attention areas and a stronger colour dependency. As a result,
 in the context of the positive Grad-CAM and HiResCAM attributions, we are interested in investigating if emphasizing the image pixels intensity could potentially prevent the model from 
 locating a learned pattern. Some examples of this scenario are included in the following image.
 
@@ -106,10 +106,10 @@ The maximum and minimum HAAS values are included in the following table, accompa
      <img src="https://github.com/vggls/medical_xai/assets/55101427/33190fdf-a4c6-4287-8918-b048c112213f.png" height="120" width="350" />
    </p>
 
-
 Per dataset, the pool of models yields maximum HAAS score above 1 for a highly performing model and minimum HAAS score slightly below 1 for a well performing model.
 Hence, it was possible to derive meaningful HAAS scores when utilizing the non-medical datasets and models that were not optimally trained.
-This stands in contrast with the medical data experimets which were built on models that underwent meticulous training and suggests evidence that HAAS might be more sensitive to medical data.
+This stands in contrast with the medical data experimets of section 4 which were built on models that underwent meticulous training 
+and suggests evidence that HAAS might be more sensitive to medical data.
 
 ## Main References
 
