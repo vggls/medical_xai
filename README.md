@@ -1,6 +1,6 @@
-### Title: Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics
+## Title: Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics
 
-### 1. Intro
+## 1. Intro
 This repository contains the source code of the study presented in the following
 [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1).
 
@@ -16,7 +16,7 @@ On the other hand, the HAAS score does not contribute to our comparison as it ev
 This inspires further study about the nature of HA images and leads us to investigate their relation with features 
 which could potentially vary between medical and non-medical datasets.
 
-### 2. Background
+## 2. Background
 
 Adopting the terminology of [3], an attribution map method will be considered ***faithful***
 to a model if the sum of the attribution map values reflects the class score calculation, up to a class-dependent bias term deviation.
@@ -26,7 +26,7 @@ Based on results included in [1], [2] and [3], we summarize in the following tab
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/3db620a3-032b-43d8-a155-57dda47047c0.png" height="140" width="500" />
    </p>
 
-### 3. Methodology
+## 3. Methodology
 The combination of non-equivalent values and the faithfulness of HiResCAM turns the setup of *Conv - Flatten - Class Scores* structures, 
 with gradients calculated at the last convolutional layer, into a *unique setup reference* where the algorithms can be distinguished. 
 In the remaining setups, both algorithms are either equivalent or non-faithful. Consequently, this particular setup serves as a 
@@ -38,7 +38,7 @@ As a result, the workflow of our study is summarized as follows:
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/23fec2ee-6178-47c5-bf8a-1c4d93800b9e.png" height="230" width="580" />
    </p>
    
-### 4. Experimental results 
+## 4. Experimental results 
 - AOPC score
 
 In our experiments, we produce 224\*224 pixel Grad-CAM and HiResCAM attribution maps, which are perturbed by regions of size 56\*56, 28\*28, 21\*21 and 16\*16, resulting in heatmaps of size 4\*4, 8\*8, 11\*11 and 14\*14 respectively. In addition, per perturbation step, we replace the image pixels with re-sampled uniform noise. We note that large AOPC values suggest heatmaps of better quality.
@@ -64,7 +64,7 @@ The HAAS score is free of hyper-parameters. We note that when HAAS is greater th
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/9d78612f-8fab-41b6-8bb8-0e5e3e5fc842.png" height="90" width="470" />
    </p>
 
-### 5. A short analysis on the results (Discussion)
+## 5. A short analysis on the results (Discussion)
 - AOPC and Max Sensitivity
   
 As per section 4, we observe that AOPC favors HiResCAM over Grad-CAM in 7/8 model experiments and Max Sensitivity in 8/8 model experiments. We discuss their results together since the analysis is rooted in the same reasoning.
@@ -112,7 +112,7 @@ Per dataset, the pool of models yields maximum HAAS score above 1 for a highly p
 Hence, it was possible to derive meaningful HAAS scores when utilizing the non-medical datasets and models that were not optimally trained.
 This stands in contrast with the medical data experimets which were built on models that underwent meticulous training and suggests evidence that HAAS might be more sensitive to medical data.
 
-#### ----- Main References -----
+## Main References
 
 - [1] [CAM](https://arxiv.org/pdf/1512.04150.pdf)
 - [2] [GradCAM](https://arxiv.org/pdf/1610.02391.pdf)
