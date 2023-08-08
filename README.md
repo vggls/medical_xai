@@ -68,7 +68,7 @@ The HAAS score is free of hyper-parameters. We note that when HAAS is greater th
 ## 5. A short analysis on the results (Discussion)
 - AOPC and Max Sensitivity
   
-As per section 4, we observe that AOPC favors HiResCAM over Grad-CAM in 7/8 model experiments and Max Sensitivity in 8/8 model experiments. We discuss their results together since the analysis is rooted in the same reasoning.
+We observe that AOPC favors HiResCAM over Grad-CAM in 7/8 model experiments and Max Sensitivity in 8/8 model experiments. We discuss their results together since the analysis is rooted in the same reasoning.
 
 A notable distinction between HiResCAM and Grad-CAM lies in the treatment of gradients. 
 Grad-CAM calculates Gradient Averages to assign weights to the feature maps. On the other hand, HiResCAM uses the Hadamard product to weight each feature map pixel with its corresponding gradient, preserving in that way the gradient's value-and-sign influence on a pixel level.
@@ -83,7 +83,7 @@ Thus, the HiResCAM attribution maps provide more precise localization of the mos
 
 - HAAS
   
-As per section 4, in 15/16 cases we calculated a HAAS score below 1, implying that almost all attribution maps cannot capture the models' viewpoints.
+In 15/16 cases we calculated a HAAS score below 1, implying that almost all attribution maps cannot capture the models' viewpoints.
 
 Are these results related to the nature of medical images? 
 
