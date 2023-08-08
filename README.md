@@ -3,6 +3,7 @@
 ## 1. Intro
 This repository contains the source code of the study presented in the following
 [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1).
+<!--- to comment out --->
 
 We address the problem of quantifying the quality of attribution maps in a setting where HiResCAM[3] produces *faithful* attributions while Grad-CAM[2] does not.
 Our evaluation scheme implements the well-established AOPC[4] and Max Sensitivity[5] scores along with the recently introduced HAAS[6] score and utilizes ResNet 
