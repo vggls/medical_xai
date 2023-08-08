@@ -1,4 +1,4 @@
-## Title: Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics
+## Title: A comparative study of Grad-CAM vs HiResCAM interpretability methods under the scope of faithfulness
 
 ## 1. Intro
 This repository contains the source code of the study presented in the following
