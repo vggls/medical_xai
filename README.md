@@ -5,13 +5,10 @@ This repository contains the source code of the study presented in the following
 [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1).
 <!--- to comment out --->
 
-We address the problem of quantifying the quality of attribution maps in a setting where HiResCAM[3] produces *faithful* attributions while Grad-CAM[2] does not,
-under the objective to investigate whether faithfulness aligns with the metrics results.
-Our evaluation scheme implements the well-established AOPC[4] and Max Sensitivity[5] scores along with the recently introduced HAAS[6] score and utilizes ResNet 
-and VGG pre-trained architectures trained on X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
+We address the problem of studying the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of XAI attribution map methods. Our implementation utilizes X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
 and digital pathology ([CRC](https://zenodo.org/record/1214456), 
 [HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000),
-[BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) medical image datasets.
+[BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) medical image datasets and the setting proposed in [3] where HiResCAM[3] provably generates faithful attributions whereas Grad-CAM[2] does not. In turn, we fine-tune ResNet and VGG pre-trained architectures and evaluate the generated maps via the AOPC[4], Max Sensitivity[5] and HAAS[6] metrics with the objective to investigate if the metrics can distinguish between faithful and non-faithful attribution maps.
 
 Our findings (see below) suggest that Max-Sensitivity and AOPC results favour the faithful attribution maps.
 On the other hand, the HAAS score does not contribute to our comparison as it evaluates almost all attribution maps as inaccurate. 
