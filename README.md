@@ -60,7 +60,7 @@ Blue line: Grad-CAM, Red line: HiResCAM
 The HAAS score is free of hyper-parameters. We note that when HAAS is greater than 1, the attribution maps explain the features' importance well. On the other hand, if HAAS is less than 1, the attribution maps fail to bring out the features' importance for the model.
 
 <p align="center">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/9d78612f-8fab-41b6-8bb8-0e5e3e5fc842.png" height="90" width="470" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/14446c3b-e651-48ca-9ac2-262a3e214b02.png" height="90" width="470" />
    </p>
 
 ## 5. A short analysis on the results (Discussion)
