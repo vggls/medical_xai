@@ -34,9 +34,9 @@ compelling ground for hosting a meaningful comparison between Grad-CAM and HiRes
 As a result, the workflow of our study is summarized as follows:
 
 <p align="center">
-     <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/23fec2ee-6178-47c5-bf8a-1c4d93800b9e.png" height="230" width="580" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/99c38eef-6713-4640-a5c1-160c3369f2f8.png" height="260" width="630" />
    </p>
-   
+
 ## 4. Experimental results 
 - AOPC score
 
