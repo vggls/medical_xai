@@ -11,7 +11,7 @@ and digital pathology ([CRC](https://zenodo.org/record/1214456),
 [HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000),
 [BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) medical image datasets and the setting proposed in [3] where HiResCAM[3] provably generates faithful attributions whereas Grad-CAM[2] does not. In turn, we fine-tune ResNet and VGG pre-trained architectures and evaluate the generated maps via the AOPC[4], Max Sensitivity[5] and HAAS[6] metrics with the objective to investigate if the metrics can distinguish between faithful and non-faithful attribution maps.
 
-Our findings (see below) suggest that Max-Sensitivity and AOPC results favour the faithful attribution maps.
+Our findings suggest that Max-Sensitivity and AOPC results favour the faithful attribution maps.
 On the other hand, the HAAS score does not contribute to our comparison as it evaluates almost all attribution maps as inaccurate. 
 This inspires further study about the nature of HA images and leads us to investigate their relation with features 
 which could potentially vary between medical and non-medical datasets.
