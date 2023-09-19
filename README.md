@@ -1,12 +1,9 @@
 <!-- ## Title: A comparative study of Grad-CAM vs HiResCAM interpretability methods under the scope of faithfulness -->
 ## Title: On the evaluation of deep learning interpretability methods for medical images under the scope of faithfulness
 
-*Also: M.Sc. thesis original title "Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics" [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)*
+<!-- *Also: M.Sc. thesis original title "Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics" [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)* -->
 
 ## 1. Intro
-<!-- This repository contains the source code of the study presented in the following
-[text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1). -->
-<!--- to comment out --->
 
 We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of XAI attribution map methods. Our implementation utilizes X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
 and digital pathology ([CRC](https://zenodo.org/record/1214456), 
