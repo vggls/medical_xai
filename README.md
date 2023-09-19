@@ -1,4 +1,4 @@
-*This repo contains material and code of the M.Sc. thesis in AI @ NCSR Demokritos & University of Piraeus, Athens, Greece <br>
+*This repo contains material and code of the M.Sc. thesis in AI @ NCSR Demokritos & University of Piraeus <br>
 originally titled "Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics" [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)*
 
 ## Title: On the evaluation of deep learning interpretability methods for medical images under the scope of faithfulness
