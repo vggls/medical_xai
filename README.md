@@ -1,11 +1,12 @@
-<!-- ## Title: A comparative study of Grad-CAM vs HiResCAM interpretability methods under the scope of faithfulness -->
-## Title: On the evaluation of deep learning interpretability methods for medical images under the scope of faithfulness
+*This repo contains material and code of the M.Sc. thesis in AI @ NCSR Demokritos & University of Piraeus, Athens, Greece <br>
+originally titled "Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics" [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)*
 
-<!-- *Also: M.Sc. thesis original title "Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics" [text link](https://dione.lib.unipi.gr/xmlui/bitstream/handle/unipi/15495/Lamprou_mtn2107.pdf?sequence=1)* -->
+## Title: On the evaluation of deep learning interpretability methods for medical images under the scope of faithfulness
 
 ## 1. Intro
 
-We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of XAI attribution map methods. Our implementation utilizes X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
+We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of XAI attribution map methods. 
+Our implementation utilizes X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
 and digital pathology ([CRC](https://zenodo.org/record/1214456), 
 [HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000),
 [BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) medical image datasets and the setting proposed in [3] where HiResCAM[3] provably generates faithful attributions whereas Grad-CAM[2] does not. In turn, we fine-tune ResNet and VGG pre-trained architectures and evaluate the generated maps via the AOPC[4], Max Sensitivity[5] and HAAS[6] metrics with the objective to investigate if the metrics can distinguish between faithful and non-faithful attribution maps.
