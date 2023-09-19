@@ -1,7 +1,7 @@
 <!-- ## Title: A comparative study of Grad-CAM vs HiResCAM interpretability methods under the scope of faithfulness -->
 ## Title: On the evaluation of deep learning interpretability methods for medical images under the scope of faithfulness
 
-*Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics*
+*Also: "Grad-CAM vs HiResCAM: A comparative study via quantitative evaluation metrics"*
 
 ## 1. Intro
 <!-- This repository contains the source code of the study presented in the following
