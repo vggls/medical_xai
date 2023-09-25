@@ -32,7 +32,7 @@ Based on results included in [1], [2] and [3], we summarize in the following tab
 
 ## 3. Methodology
 The combination of non-equivalent values and the faithfulness of HiResCAM turns the setup of *Conv - Flatten - Class Scores* structures, 
-with gradients calculated at the last convolutional layer, into a *unique setup reference* where the algorithms can be distinguished. 
+with gradients calculated at the last convolutional layer, into a *reference setting* where the algorithms are distinguishable. 
 In the remaining setups, both algorithms are either equivalent or non-faithful. Consequently, this particular setup serves as a 
 compelling ground for hosting a meaningful comparison between Grad-CAM and HiResCAM.
 
