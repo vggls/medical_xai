@@ -5,16 +5,20 @@ originally titled "**Grad-CAM vs HiResCAM: A comparative study via quantitative 
 
 ## 1. Intro
 
-We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of XAI attribution map methods. 
+We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of medical attribution maps. 
 Our implementation utilizes X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
 and digital pathology ([CRC](https://zenodo.org/record/1214456), 
 [HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000),
-[BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) medical image datasets and the setting proposed in [3] where HiResCAM[3] provably generates faithful attributions whereas Grad-CAM[2] does not. In turn, we fine-tune ResNet and VGG pre-trained architectures and evaluate the generated maps via the AOPC[4], Max Sensitivity[5] and HAAS[6] metrics with the objective to investigate if the metrics can distinguish between faithful and non-faithful attribution maps.
+[BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) image datasets and the setting proposed in [3] where HiResCAM[3] provably generates faithful attributions, whereas Grad-CAM[2] does not. In turn, we fine-tune ResNet and VGG pre-trained architectures and evaluate the produced attribution maps via the AOPC[4], Max Sensitivity[5] and HAAS[6] metrics with the objective to investigate if the metrics can distinguish between faithful and non-faithful attribution maps.
 
-Our findings suggest that Max-Sensitivity and AOPC results favour the faithful attribution maps.
+Our findings suggest that Max-Sensitivity and AOPC favour the HiResCAM attribution maps. This is attributed to the fact that this kind 
+of mappings preserve the gradient effect on a pixel-level ultimately procducing high-resolution, informative and resilient maps.
 On the other hand, the HAAS score does not contribute to our comparison as it evaluates almost all attribution maps as inaccurate. 
-This inspires further study about the nature of HA images and leads us to investigate their relation with features 
-which could potentially vary between medical and non-medical datasets.
+To this purpose we further compare our calculated values against values
+obtained over a diverse group of models which are trained on non-medical benchmark datasets,
+to eventually achieve more responsive results. The final experiments suggest that the metric is more
+sensitive over complex medical patterns, commonly characterized by strong colour dependency
+and multiple attention areas.
 
 ## 2. Background
 
