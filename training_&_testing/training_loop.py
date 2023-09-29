@@ -232,7 +232,7 @@ class Train():
             current_epoch = len(self.validation_history['loss'])
             self.early_stopping_checkpoints.append(current_epoch)  
             
-            del self.best_model                                  # delete previous optimal model from memory
+            #del self.best_model                                  # delete previous optimal model from memory
             self.best_model = deepcopy(self.model)               # set new model as optimal
             
             self.unchanged_epochs = 0                            # reset epoch counter to 0
