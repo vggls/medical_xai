@@ -232,16 +232,15 @@ class Train():
             current_epoch = len(self.validation_history['loss'])
             self.early_stopping_checkpoints.append(current_epoch)  
             
-            del self.best_model                                  # διεγραψε το παλιο best model attribute από τη μνήνη
+            del self.best_model                                  # delete previous optimal model from memory
+            self.best_model = deepcopy(self.model)               # set new model as optimal
             
-            self.best_model = deepcopy(self.model)               # θεσε ως best το νεο
-            
-            self.unchanged_epochs = 0                            # epoch counter ξανα στο 0
-            self.threshold_val_loss  = epoch_val_loss            # θεσε το νέο loss ως μέγιστο target
+            self.unchanged_epochs = 0                            # reset epoch counter to 0
+            self.threshold_val_loss  = epoch_val_loss            # set as new loss threshold the loss achieved by the new optimal model
             self.threshold_avg_recall = epoch_val_avg_recall     # θεσε το νέο avg recall ως ελάχιστο target
             
             if (current_epoch>=2):
-                os.remove(f'model_epoch{self.early_stopping_checkpoints[-2]}.pt')      # διεγραψε το παλιο μοντέλο από το φάκελο 
+                os.remove(f'model_epoch{self.early_stopping_checkpoints[-2]}.pt')      # delete previous optimal from folder 
             torch.save(self.best_model, f'model_epoch{current_epoch}.pt')
             
             print('->New model saved!')
