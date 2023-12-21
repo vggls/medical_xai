@@ -25,7 +25,7 @@ class MoRF():
       assert(self.tensor.shape[2]==self.tensor.shape[3])
       
       self.heatmap_regions = heatmap_regions  # the image heatmap regions in order of importance (resulting from a XAI algorithm)
-      self.model = model                      # a neural network model WITH Softmax in the end of the classifier
+      self.model = model                      
       
       #  the size of the image region that will be noise perturbed
       if self.tensor.shape[3]%np.sqrt(len(self.heatmap_regions)) == 0:
