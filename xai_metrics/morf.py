@@ -67,6 +67,7 @@ class MoRF():
         max_row_column = np.sqrt(len(self.heatmap_regions)) - 1
 
         # apply noise to tensor region - case1 noise fits image perfectly, case2 noise should be adjusted for the image edges
+        # the ':3' is equiv to ':' in the calcs below, since we apply the transformation to all channels. 3 denotes the number of channels.
         if self.tensor.shape[3]%np.sqrt(len(self.heatmap_regions)) == 0:
             image[:,:3,region_row*self.perturbation_size:(region_row+1)*self.perturbation_size, \
                    region_column*self.perturbation_size:(region_column+1)*self.perturbation_size] = uniform_noise
