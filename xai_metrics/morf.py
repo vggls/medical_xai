@@ -88,8 +88,6 @@ class MoRF():
                 remaining_columns = self.tensor.shape[3] - region_column*self.perturbation_size
                 image[:,:3, -remaining_rows:, -remaining_columns: ] = uniform_noise[:3, :remaining_rows, :remaining_columns]
                 
-        #plt.imshow(image.squeeze(0).permute(1, 2, 0).cpu().numpy())
-        #plt.show()
         # make prediction and get value via the index used above (see prob variable line). this value will be the class predicted probability
         perturbed_raw_scores = self.model(image)
         perturbed_probs = softmax(perturbed_raw_scores)
