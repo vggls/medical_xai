@@ -5,12 +5,13 @@ originally titled "**Grad-CAM vs HiResCAM: A comparative study via quantitative 
 
 ## 1. Intro
 
-We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of medical attribution maps. 
+We study the relationship between faithfulness and quantitative interpretability evaluation metrics in the context of attribution maps. 
+Taking inspiration from the fact that a human would show preference to faithful attribution maps, it is natural to investigate whether attribution map metrics will assign them with better evaluation scores as well.
+
 Our implementation fine-tunes pre-trained ResNet and VGG19 architectures over X-Rays ([Covid-19 Database](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database))
 and digital pathology ([CRC](https://zenodo.org/record/1214456), 
 [HAM10000](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000),
 [BreakHis](https://www.kaggle.com/datasets/ambarish/breakhis)) image datasets and calculates Grad-CAM[2] and HiResCAM[3] attribution maps in setting where only HiResCAM is known to produce faithful attributions (see [3]).
-
 The objective is to evaluate the quality of the attribution maps via quantitative evaluation metrics such as AOPC[4], Max Sensitivity[5] and HAAS[6], and investigate if the metrics can distinguish between faithful and non-faithful attribution maps.
 
 Our findings suggest that Max-Sensitivity and AOPC favour the HiResCAM attribution maps. This is attributed to the fact that this kind 
