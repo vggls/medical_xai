@@ -104,7 +104,7 @@ locating a learned pattern. Some examples of this scenario are included in the f
      <img src="https://github.com/vggls/medical_xai/assets/55101427/9c41fd93-a5c0-443d-8c61-10c138070fb0.png" height="150" width="500" />
      <img src="https://github.com/vggls/medical_xai/assets/55101427/4db4bbf0-149d-477e-9067-22378c4abb9f.png" height="150" width="500" />
    </p>
-=
+
 We conduct the following experiment to further explore the relationship between HAAS and the medical data of this study: For Cifar10, STL10 and Imagenette we train a loop of 16 VGG19 models, configured over a variety of training batch size, learning rate, scheduler and weight decay (see in the text for more details), in order to track the HiResCAM HAAS scores range. 
 The maximum and minimum HAAS values are included in the following table, accompanied with the respective mean AUC score of the model.
 
