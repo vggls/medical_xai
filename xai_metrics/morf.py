@@ -211,7 +211,7 @@ def plot_aopc_per_step(differences, no_of_correctly_classified, plot=False, plot
     cumulative = [x / no_of_correctly_classified for x in cumulative]  # normalization
     
     #cumulative = [x / len(differences) for x in cumulative]  # normalization
-    cumulative = [x / (j+1) for (x,j) in zip(cumulative, range(len(differences)))] # normalization; might affect increasing line a bit
+    cumulative = [x / (j+1) for (x,j) in zip(cumulative, range(len(differences)))] # normalization
     
     aopc = [round(x, 2) for x in cumulative]
 
