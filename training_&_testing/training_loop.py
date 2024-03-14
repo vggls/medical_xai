@@ -152,7 +152,7 @@ class Train():
                 loss = self.loss_fct(outputs, labels)    #compute loss
                 val_loss += loss.item()                  #add batch loss to the total epoch validation loss
         
-                # class metrics
+                # class metrics - batch level
                 labels_list = torch.Tensor.tolist(labels)
                 _, preds = torch.max(outputs, 1)
                 preds_list = torch.Tensor.tolist(preds)
