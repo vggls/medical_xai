@@ -1,4 +1,8 @@
 """
+This is the original code used for the AOPC experiments of this repo; previously named 'morf.py'.
+Now one may also refer to the current 'morf.py' file which has faster execution time.
+Both scripts, morf_old.py and morf.py, are equivalent code in terms of results.
+
 Sources: https://arxiv.org/pdf/1509.06321.pdf 
 """
 
