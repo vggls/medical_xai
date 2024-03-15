@@ -151,12 +151,6 @@ def AOPC_Dataset(dataset,
                  region_size,
                  cam_instance):
     
-    '''
-    Remarks: Instead of appending image aopc scores we could have alternatively update the total score (aopc_score+=img_score)
-            and we could have also included the normalization steps in the end of the method.
-            However, both these approaches would prevent us from aggregating multiple batch scores which is desirabale.
-    '''
-    
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
     
@@ -206,7 +200,6 @@ def AOPC_Dataset(dataset,
     aopc = round(sum(scores)/len(scores), 3)
     
     return differences, scores, aopc
-
 
 def plot_aopc_per_step(differences, no_of_correctly_classified, plot=False, plot_title=None):
         
