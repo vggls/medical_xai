@@ -44,7 +44,8 @@ class MoRF():
           raw_scores = self.model(self.tensor)
           probs = softmax(raw_scores)
           index = torch.argmax(probs) #of top predicted class
-          perturbations.append(float(probs[0, index]))
+          class_prob = round(float(probs[0,index]), 3)
+          perturbations.append(class_prob)
     
           noise = torch.rand(3, self.tensor.shape[2], self.tensor.shape[3]).to(self.device) * \
                    (torch.max(self.tensor) - torch.min(self.tensor)) + torch.min(self.tensor)
@@ -58,9 +59,10 @@ class MoRF():
     
               self.tensor[:, :, r*self.perturbation_size:r_pixel_end, c*self.perturbation_size:c_pixel_end] = \
                 noise[:, r*self.perturbation_size:r_pixel_end, c*self.perturbation_size:c_pixel_end]
-    
+
               perturbed_probs = softmax(self.model(self.tensor))
-              perturbations.append(float(perturbed_probs[0, index]))
+              class_perturbed_prob = round(float(perturbed_probs[0, index]), 3)
+              perturbations.append(class_perturbed_prob)
     
       if plot_morf_curve==True:
           # A good heatmap results in a large area over the morf (perturbation) curve. This is where the 'AOPC' name comes from.
