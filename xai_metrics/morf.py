@@ -142,9 +142,6 @@ def AOPC_Dataset(dataset,
             differences = [(i+j) for (i,j) in zip(differences, img_diffs)]      #for plot method below
             scores.append(img_score)                                            #for total aopc score
 
-            if no_of_correctly_classified%100 == 0:
-                print(no_of_correctly_classified)
-
     print('Total time: {} secs'.format(total_time))
     print('No of correctly classified images: {}/{}'.format(no_of_correctly_classified, len(dataset)))
     print('Avg secs per image: ', round(total_time/no_of_correctly_classified, 2))
