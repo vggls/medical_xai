@@ -23,7 +23,7 @@ class MoRF():
                  model):
         
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.tensor = tensor.to(self.device)
+        self.tensor = tensor.to(self.device) # tensor.shape should be (1,3,h,w)
         self.heatmap_regions = heatmap_regions
         self.model = model.to(self.device)
     
@@ -56,7 +56,8 @@ class MoRF():
               c = region[0][1] #region column
               r_pixel_end = min((r + 1) * self.perturbation_size, self.tensor.shape[2])
               c_pixel_end = min((c + 1) * self.perturbation_size, self.tensor.shape[3])
-    
+
+              #since tensor.shape[0]=1, below way of assignment is equiv to self.tensor[1, :, .., ..] = noise[:, .., ..] 
               self.tensor[:, :, r*self.perturbation_size:r_pixel_end, c*self.perturbation_size:c_pixel_end] = \
                 noise[:, r*self.perturbation_size:r_pixel_end, c*self.perturbation_size:c_pixel_end]
 
