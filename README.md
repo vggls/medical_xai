@@ -33,6 +33,10 @@ Based on results included in [1], [2] and [3], we summarize in the following tab
      <img src="https://github.com/vggls/msc_thesis_medical_xai/assets/55101427/3db620a3-032b-43d8-a155-57dda47047c0.png" height="140" width="500" />
    </p>
 
+<p align="center">
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/deaf04b9-6818-4f75-b103-42cdc271f8fe.png" height="280" width="500" />
+   </p>
+
 ## 3. Methodology
 The combination of non-equivalent values and the faithfulness of HiResCAM turns the setup of *Conv - Flatten - Class Scores* structures, 
 with gradients calculated at the last convolutional layer, into a *reference setting* where the algorithms are distinguishable. 
@@ -50,12 +54,9 @@ As a result, the workflow of our study is summarized as follows:
 
 In our experiments, we produce 224\*224 pixel Grad-CAM and HiResCAM attribution maps, which are perturbed by regions of size 56\*56, 28\*28, 21\*21 and 16\*16, resulting in heatmaps of size 4\*4, 8\*8, 11\*11 and 14\*14 respectively. In addition, per perturbation step, we replace the image pixels with re-sampled uniform noise. We note that large AOPC values suggest heatmaps of better quality.
 
-(results to be added)
-<!-- 
 <p align="center">
-     <img src=".png" height="210" width="550" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/357cba82-0bf2-49ee-bc92-d122740b2696.png" height="200" width="520" />
    </p>
-   -->
 
 - Max Sensitivity score
 
@@ -70,12 +71,9 @@ Blue line: Grad-CAM, Red line: HiResCAM
 
 The HAAS score is free of hyper-parameters. We note that when HAAS is greater than 1, the attribution maps explain the features' importance well. On the other hand, if HAAS is less than 1, the attribution maps fail to bring out the features' importance for the model.
 
-(results to be added)
-<!--
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/14446c3b-e651-48ca-9ac2-262a3e214b02.png" height="90" width="470" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/abdea6b2-0bc7-45f2-b7aa-4e55232133a1.png" height="90" width="470" />
    </p>
-   -->
 
 ## 5. A short analysis on the results (Discussion)
 - AOPC and Max Sensitivity
