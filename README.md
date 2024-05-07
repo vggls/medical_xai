@@ -113,7 +113,7 @@ We conduct the following experiment to further explore the relationship between 
 The maximum and minimum HAAS values are included in the following table, accompanied with the respective mean AUC score of the model.
 
 <p align="center">
-     <img src="https://github.com/vggls/medical_xai/assets/55101427/33190fdf-a4c6-4287-8918-b048c112213f.png" height="120" width="350" />
+     <img src="https://github.com/vggls/medical_xai/assets/55101427/e2e30f4c-4580-4e06-936f-58e8c0821e20.png" height="120" width="350" />
    </p>
 
 Per dataset, the pool of models yields maximum HAAS score above 1 for a highly performing model and minimum HAAS score slightly below 1 for a well performing model.
