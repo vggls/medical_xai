@@ -123,9 +123,17 @@ and suggests evidence that HAAS might be more sensitive to medical data.
 
 ## Main References
 
+<sup>
+     
 - [1] [CAM](https://arxiv.org/pdf/1512.04150.pdf)
+     
 - [2] [GradCAM](https://arxiv.org/pdf/1610.02391.pdf)
+  
 - [3] [HiResCAM](https://arxiv.org/pdf/2011.08891.pdf)
+  
 - [4] [AOPC](https://arxiv.org/pdf/1509.06321.pdf)
+  
 - [5] [Max Sensitivity](https://arxiv.org/pdf/1901.09392.pdf)
+  
 - [6] [HAAS](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9800759)
+</sup>
