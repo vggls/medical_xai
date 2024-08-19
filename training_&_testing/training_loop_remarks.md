@@ -27,3 +27,5 @@ Remarks on training_loop.py
           - 'recall_per_class', 'precision_per_class', 'f1_per_class';
               and the values are lists which consist of sublists equal to the number of classes.
               Each sublist describes the class metric history per epoch
+
+  5. TO DO: Current training code is not in line with the current version of the article. Update code by adding the cross-validation implementation.
