@@ -97,7 +97,7 @@ In 15/16 cases we calculated a HAAS score below 1, implying that almost all attr
 Are these results related to the nature of medical images? 
 
 In [6], HAAS was tested on datasets whose classes are determined by single objects and are not sensitive to subtle colour variations (Cifar10, STL10, ImageNet). On the other hand, medical images are more complex; the classes could have many attention areas and a stronger colour dependency. 
-In the context of the positive Grad-CAM and HiResCAM attributions, we are interested in investigating if emphasizing the image pixels intensity could potentially prevent the model from locating a learned pattern. Some examples of this scenario are included in the following image.
+In the context of the positive Grad-CAM and HiResCAM attributions, we are interested in investigating if emphasizing the image pixels' intensity could potentially prevent the model from locating a learned pattern. 
 
 <p align="center">
      <img src="https://github.com/vggls/medical_xai/assets/55101427/6944d0a4-7536-449a-9c77-37a23068b078.png" height="150" width="500" />
@@ -108,8 +108,10 @@ In the context of the positive Grad-CAM and HiResCAM attributions, we are intere
      <img src="https://github.com/vggls/medical_xai/assets/55101427/4db4bbf0-149d-477e-9067-22378c4abb9f.png" height="150" width="500" />
    </p>
 
-We conduct the following experiment to further explore the relationship between HAAS and the medical data of this study: For Cifar10, STL10 and Imagenette we train a loop of 16 VGG19 models, configured over a variety of training batch size, learning rate, scheduler and weight decay (see in the text for more details), in order to track the HiResCAM HAAS scores range. 
-The maximum and minimum HAAS values are included in the following table, accompanied with the respective mean AUC score of the model.
+We conduct the following experiment to further explore the relationship between HAAS and the medical data of this study: 
+For Cifar10, STL10 and Imagenette we train a loop of 16 VGG19 models, configured over a variety of training batch size, learning rate, scheduler and weight decay (see in the text for more details), 
+in order to track the HiResCAM HAAS scores range. 
+The maximum and minimum HAAS values are reported in the following table, accompanied with the respective mean AUC score of the model.
 
 <p align="center">
      <img src="https://github.com/vggls/medical_xai/assets/55101427/e2e30f4c-4580-4e06-936f-58e8c0821e20.png" height="120" width="350" />
