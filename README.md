@@ -96,9 +96,8 @@ In 15/16 cases we calculated a HAAS score below 1, implying that almost all attr
 
 Are these results related to the nature of medical images? 
 
-HAAS in [6] was tested on datasets whose classes are determined by single objects and are not sensitive to subtle colour variations (Cifar10, STL10, ImageNet). On the other hand, medical images are more complex; the classes could have many attention areas and a stronger colour dependency. As a result,
-in the context of the positive Grad-CAM and HiResCAM attributions, we are interested in investigating if emphasizing the image pixels intensity could potentially prevent the model from 
-locating a learned pattern. Some examples of this scenario are included in the following image.
+In [6], HAAS was tested on datasets whose classes are determined by single objects and are not sensitive to subtle colour variations (Cifar10, STL10, ImageNet). On the other hand, medical images are more complex; the classes could have many attention areas and a stronger colour dependency. 
+In the context of the positive Grad-CAM and HiResCAM attributions, we are interested in investigating if emphasizing the image pixels intensity could potentially prevent the model from locating a learned pattern. Some examples of this scenario are included in the following image.
 
 <p align="center">
      <img src="https://github.com/vggls/medical_xai/assets/55101427/6944d0a4-7536-449a-9c77-37a23068b078.png" height="150" width="500" />
